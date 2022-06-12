@@ -16,6 +16,10 @@ const WrapperLayout = styled.div`
 const Body = styled.div`
   width: 1080px;
   height: auto;
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 `;
 
 const BodyWrapper = styled.div`

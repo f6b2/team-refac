@@ -68,7 +68,7 @@ export default function ChargeStation() {
       async (rsp: any) => {
         console.log(rsp);
         if (rsp.success) {
-          const response = await buyPoint({
+          await buyPoint({
             variables: {
               impUid: rsp.imp_uid,
               price: isSelect * 10,

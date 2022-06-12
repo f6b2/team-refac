@@ -1,4 +1,6 @@
 import styled from '@emotion/styled';
+import VideoRecorder from 'react-video-recorder';
+import VideoUpload from '../../../commons/videoupload';
 
 export const WrapperCol = styled.div`
   width: 100%;
@@ -23,8 +25,6 @@ export const WrapperRow = styled.div`
   align-items: center;
 `;
 
-import VideoRecorder from 'react-video-recorder';
-import VideoUpload from '../../../commons/videoupload';
 export default function VideoRecordUI(props: any) {
   return (
     <>

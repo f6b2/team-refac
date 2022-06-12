@@ -69,7 +69,7 @@ export default function GardenWriteContainer() {
         },
       });
 
-      const { data: imageResult } = await createImage({
+      await createImage({
         variables: {
           image: fileUrls,
           board: resultCreateBoard.createBoard.id,
