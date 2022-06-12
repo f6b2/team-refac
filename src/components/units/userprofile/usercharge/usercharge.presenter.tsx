@@ -1,6 +1,7 @@
 import * as Charge from './usercharge.styles';
 import Barcode from 'react-barcode';
 import UserChargeItem from './userchargeitem.presenter';
+import { v4 as uuidv4 } from 'uuid';
 
 interface IUserProfileChargelistPresenter {
   receipts: any;
@@ -38,7 +39,7 @@ export default function UserChargeUI(props: IUserProfileChargelistPresenter) {
           <Charge.Ptext>12:34</Charge.Ptext>
         </Charge.WrapperRow56>
         <Charge.WrapperRow56>
-          <Charge.Ptext>LangB Address : https://langbee.com</Charge.Ptext>
+          <Charge.Ptext>LangB Address : https://langb.shop</Charge.Ptext>
           <Charge.Ptext>Date : 2022-05-19</Charge.Ptext>
         </Charge.WrapperRow56>
         <Charge.WrapperRow56>
@@ -51,7 +52,7 @@ export default function UserChargeUI(props: IUserProfileChargelistPresenter) {
           <Charge.H3Title>Price</Charge.H3Title>
         </Charge.WrapperRow53>
         {props.receipts.fetchReceipts.map((el: any) => (
-          <UserChargeItem el={el} />
+          <UserChargeItem el={el} key={uuidv4()} />
         ))}
 
         <Charge.DividerPoint></Charge.DividerPoint>

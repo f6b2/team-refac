@@ -1,10 +1,9 @@
-import styled from "@emotion/styled";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Landing1 from "../src/components/commons/landing/landing1";
-import Landing2 from "../src/components/commons/landing/landing2";
-import { useRef } from "react";
+import styled from '@emotion/styled';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Landing1 from '../src/components/commons/landing/landing1';
+import Landing2 from '../src/components/commons/landing/landing2';
 
 const Wrapper = styled.div`
   width: 100vw;
@@ -75,9 +74,9 @@ export default function Home() {
       </Inner>
       <Inner>
         <Slider1 {...settings}>
-          <GardenLanding src="/landing/garden.png" />
-          <CommunityLanding src="/landing/community.png" />
-          <ChatLanding src="/landing/chat.png" />
+          <GardenLanding src='/landing/garden.png' />
+          <CommunityLanding src='/landing/community.png' />
+          <ChatLanding src='/landing/chat.png' />
         </Slider1>
       </Inner>
 

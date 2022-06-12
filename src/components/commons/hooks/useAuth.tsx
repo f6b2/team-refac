@@ -16,7 +16,7 @@ export function useAuth() {
     if (!accessToken) {
       restoreAccessToken.toPromise().then((newAccessToken) => {
         if (!newAccessToken) {
-          alert('로그인 후 이용 가능합니다!!!');
+          alert('Please Login');
           router.push('/signin');
         }
       });

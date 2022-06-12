@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
 import { useRouter } from 'next/router';
-import React, { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useEffect, useState, MouseEvent } from 'react';
+
 import { useRecoilState } from 'recoil';
 import { userInfoState } from '../../../commons/store';
 import { FETCH_BOARDS } from '../../commons/queries';
@@ -11,8 +11,6 @@ import {
   FETCH_COMMUNITY_BOARDS,
   FETCH_RECEIPTS,
 } from './userprofile.queries';
-
-import { MouseEvent } from 'react';
 
 export default function UserProfileContainer() {
   const [userInfo] = useRecoilState(userInfoState);

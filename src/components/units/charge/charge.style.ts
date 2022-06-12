@@ -19,6 +19,11 @@ export const WrapperCol = styled.div`
   border-radius: 10px;
   background-image: url('/image/paybg.png');
   object-fit: cover;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 export const H2Title = styled.h2`
@@ -84,6 +89,10 @@ export const WrapperRowDetail = styled.div`
   width: 100%;
   height: 191px;
   margin-top: 51px;
+  @media (max-width: 767px) {
+    flex-direction: column;
+    height: auto;
+  }
 `;
 
 export const WrapperColDetail = styled.div`

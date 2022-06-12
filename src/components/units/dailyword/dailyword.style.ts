@@ -12,6 +12,9 @@ export const WrapperDiv = styled.div`
   border: 1px solid #dbdbdb;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
   border-radius: 0px 50px;
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 export const WrapperRow = styled.div`

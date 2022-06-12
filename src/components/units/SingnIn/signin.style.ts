@@ -6,8 +6,8 @@ export const WrapperDiv = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: auto;
-  padding: 69px;
+  height: 100vh;
+  padding: 0px 20px;
 `;
 
 export const SignUpWrapperDiv = styled.div`
@@ -21,6 +21,11 @@ export const SignUpWrapperDiv = styled.div`
   background-color: #fff;
   box-shadow: 30px 30px 10px rgba(0, 0, 0, 0.25);
   border-radius: 50px 0px;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    padding: 10% 10%;
+  }
 `;
 
 export const SignUpForm = styled.form`
@@ -38,6 +43,7 @@ export const SignUpTitleH1 = styled.h1`
   font-size: 20px;
   line-height: 27px;
   text-align: center;
+  margin-bottom: 7%;
 `;
 
 export const SignUpItemDiv = styled.div`
@@ -62,10 +68,10 @@ export const SignUpItemInput = styled.input`
 
 export const SignUpItemBtn = styled.button`
   width: 100%;
-  height: 41px;
+  height: auto;
   margin-top: 24px;
   border: none;
-  font-size: 12px;
+  font-size: 18px;
   padding: 12px 16px;
   color: #f8f9fa;
   background: #ffb950;
@@ -132,9 +138,9 @@ export const PFindId = styled.p`
   color: #767676;
 `;
 
-export const ButtonGoogle = styled.a`
-  width: 298px;
-  height: 29px;
+export const ABtnGoogle = styled.a`
+  width: 100%;
+  height: auto;
   border: 1px solid #dcdcdc;
   border-radius: 10px;
   background: #ffffff;
@@ -144,6 +150,7 @@ export const ButtonGoogle = styled.a`
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  padding: 5% 0%;
 `;
 
 export const WarperBtnContents = styled.div`
@@ -165,29 +172,31 @@ export const PBtnText = styled.p`
   height: auto;
   font-style: normal;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 18px;
   line-height: 14px;
   color: #000000;
   margin: 0px;
 `;
 
-export const ButtonKakao = styled.a`
-  width: 298px;
-  height: 29px;
+export const ABtnKakao = styled.a`
+  width: 100%;
+  height: auto;
   border: none;
   border-radius: 10px;
   background: #fee500;
   border: none;
   margin-bottom: 16px;
   text-decoration: none;
+  padding: 5% 0%;
 `;
 
 export const ButtonNaver = styled.a`
-  width: 298px;
-  height: 29px;
+  width: 100%;
+  height: auto;
   border: none;
   border-radius: 10px;
   background: #06bd34;
   border: none;
   text-decoration: none;
+  padding: 5% 0%;
 `;
