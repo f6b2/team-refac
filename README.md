@@ -1,6 +1,6 @@
 ## Backend 경로 바꾸기
 
-1. 파일 위치 : /Users/jintaekwoo/Desktop/f6b2-team4-client/f6b2-client/src/components/commons/apollo/index.tsx
+1. 파일 위치 : /src/components/commons/apollo/index.tsx
 
 ```javascript
 const uploadLink = createUploadLink({
@@ -9,7 +9,7 @@ const uploadLink = createUploadLink({
     headers: { Authorization: `Bearer ${accessToken}` },
 ```
 
-2. 파일 위치 : f6b2-client/src/commons/libraries/getAccessToken.ts
+2. 파일 위치 : /src/commons/libraries/getAccessToken.ts
 
 ```javascript
 export async function getAccessToken() {
@@ -23,7 +23,7 @@ export async function getAccessToken() {
 
 ## image 업로드 사용방법
 
-경로 : f6b2-client/src/components/commons/upload/index.tsx
+경로 : /src/components/commons/upload/index.tsx
 
 > Container
 
@@ -76,7 +76,7 @@ const onChangeFileUrls = (fileUrl: string) => {
 
 ## video 업로드 사용방법
 
-경로 : f6b2-client/src/components/commons/videoupload/index.tsx
+경로 : /src/components/commons/videoupload/index.tsx
 
 > Container
 
@@ -152,7 +152,7 @@ export default function Home() {
 
 ## Language 코드 받는 법
 
-- 파일 경로 : f6b2-client/src/commons/libraries/utils.ts
+- 파일 경로 : /src/commons/libraries/utils.ts
 
 - `getLangCode` import 하기
 - 사용법

@@ -54,7 +54,7 @@ export default function UserEditContainer(props: IUserProfileEdit) {
 
   const onClickUpdate = async () => {
     try {
-      const result = await updateUser({
+      await updateUser({
         variables: {
           originalPassword: isCurPW,
           updateUserInput: {

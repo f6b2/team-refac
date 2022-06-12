@@ -50,7 +50,7 @@ export default function VideoUpload(props: {
 }) {
   const fileRef = useRef<HTMLInputElement>(null);
 
-  const [videoUrl, setVideoUrl] = useState<string | undefined>('');
+  const [, setVideoUrl] = useState<string | undefined>('');
   const [uploadFile] = useMutation<
     Pick<IMutation, 'uploadFile'>,
     IMutationUploadFileArgs

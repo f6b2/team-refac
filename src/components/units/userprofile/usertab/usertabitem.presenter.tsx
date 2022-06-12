@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client';
-import { Router, useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import { getDate } from '../../../../commons/libraries/utils';
 import { FETCH_BOARD_IMAGE } from './usertabitem.queries';
 import * as TabItem from './usertabitem.style';

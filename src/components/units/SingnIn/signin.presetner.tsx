@@ -24,7 +24,7 @@ export default function SignInUI(props: ISingninPresenter) {
             <U.Warning>{props.formState.errors?.password?.message}</U.Warning>
           </U.SignUpItemDiv>
           <U.WrapperRow>
-            <U.PFindId>Find ID / Password</U.PFindId>
+            {/* <U.PFindId>Find ID / Password</U.PFindId> */}
           </U.WrapperRow>
 
           <U.SignUpItemDiv>
@@ -36,18 +36,18 @@ export default function SignInUI(props: ISingninPresenter) {
         <U.BtnMoveSignUp onClick={props.onClickMoveSignUp}>
           Don’t have any account? ➤ Go sign up
         </U.BtnMoveSignUp>
-        <U.ButtonGoogle href='https://langbee.shop/login/google'>
+        <U.ABtnGoogle href='https://langbee.shop/login/google'>
           <U.WarperBtnContents>
             <U.ImageBtnIcon src={'/image/google.png'} />
             <U.PBtnText>Log in via Google</U.PBtnText>
           </U.WarperBtnContents>
-        </U.ButtonGoogle>
-        <U.ButtonKakao href='https://langbee.shop/login/kakao'>
+        </U.ABtnGoogle>
+        <U.ABtnKakao href='https://langbee.shop/login/kakao'>
           <U.WarperBtnContents>
             <U.ImageBtnIcon src={'/image/kakao.png'} />
             <U.PBtnText>Log in via Kakao</U.PBtnText>
           </U.WarperBtnContents>
-        </U.ButtonKakao>
+        </U.ABtnKakao>
         <U.ButtonNaver href='https://langbee.shop/login/naver'>
           <U.WarperBtnContents>
             <U.ImageBtnIcon src={'/image/naver.png'} />
