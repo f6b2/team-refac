@@ -18,11 +18,15 @@ export const WrapperCol = styled.div`
   box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   background-image: url('/image/paybg.png');
+  background-repeat: no-repeat;
   object-fit: cover;
 
   @media (max-width: 767px) {
     width: 100%;
     height: auto;
+    margin-top: 0px;
+    border-radius: 0px;
+    border: none;
   }
 `;
 
@@ -34,6 +38,9 @@ export const H2Title = styled.h2`
   text-align: center;
   color: #000000;
   margin: 0px;
+  @media (max-width: 767px) {
+    font-size: 24px;
+  }
 `;
 
 export const WrapperColCurPoint = styled.div`
@@ -87,11 +94,13 @@ export const WrapperRowDetail = styled.div`
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  height: 191px;
+  height: auto;
   margin-top: 51px;
   @media (max-width: 767px) {
     flex-direction: column;
+    align-items: center;
     height: auto;
+    margin-top: 20px;
   }
 `;
 
@@ -106,6 +115,11 @@ export const WrapperColDetail = styled.div`
   background: #3a3939;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
   border-radius: 0px 50px;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    height: auto;
+  }
 `;
 
 export const PDetail = styled.p`
@@ -150,8 +164,14 @@ export const WrapperColBtn = styled.div`
   height: 288px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    height: auto;
+    margin-top: 25px;
+  }
 `;
 
 export const WrapperRowBtn = styled.div`
@@ -168,8 +188,9 @@ export const WrapperRowBtn2 = styled.div`
   justify-content: center;
   width: 100%;
   height: 90px;
-  position: absolute;
-  top: 370px;
+  position: relative;
+  top: -20px;
+  /* top: 370px; */
 `;
 
 export const WrapperRowBtn3 = styled.div`
@@ -178,54 +199,56 @@ export const WrapperRowBtn3 = styled.div`
   justify-content: center;
   width: 100%;
   height: 90px;
-  position: absolute;
-  top: 450px;
+  position: relative;
+  top: -40px;
+  /* position: absolute;
+  top: 450px; */
 `;
 
-export const BtnPoint = styled.button`
-  font-family: 'Noto Sans';
-  position: relative;
-  width: 100px;
-  height: 55px;
-  background: ${(props: IChargeStationStyle) =>
-    props.isClicked ? '#ffb950' : '#ffffff'};
-  border: ${(props: IChargeStationStyle) =>
-    props.isClicked ? '#dbdbdb' : '#dfa349'};
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
-  font-style: normal;
-  font-weight: 700;
-  font-size: 15px;
-  line-height: 24px;
-  text-align: center;
-  color: ${(props) => (props.isClicked ? '#ffffff' : '#000000')};
-  :hover {
-    border: #dfa349;
-    background: #ffb950;
-    color: white;
-  }
-  :before {
-    content: '';
-    position: absolute;
-    top: -25px;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 25px solid white;
-  }
-  :after {
-    content: '';
-    position: absolute;
-    bottom: -25px;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 25px solid white;
-  }
-`;
+// export const BtnPoint = styled.button`
+//   font-family: 'Noto Sans';
+//   position: relative;
+//   width: 100px;
+//   height: 55px;
+//   background: ${(props: IChargeStationStyle) =>
+//     props.isClicked ? '#ffb950' : '#ffffff'};
+//   border: ${(props: IChargeStationStyle) =>
+//     props.isClicked ? '#dbdbdb' : '#dfa349'};
+//   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+//   font-style: normal;
+//   font-weight: 700;
+//   font-size: 15px;
+//   line-height: 24px;
+//   text-align: center;
+//   color: ${(props) => (props.isClicked ? '#ffffff' : '#000000')};
+//   :hover {
+//     border: #dfa349;
+//     background: #ffb950;
+//     color: white;
+//   }
+//   :before {
+//     content: '';
+//     position: absolute;
+//     top: -25px;
+//     left: 0;
+//     width: 0;
+//     height: 0;
+//     border-left: 50px solid transparent;
+//     border-right: 50px solid transparent;
+//     border-bottom: 25px solid white;
+//   }
+//   :after {
+//     content: '';
+//     position: absolute;
+//     bottom: -25px;
+//     left: 0;
+//     width: 0;
+//     height: 0;
+//     border-left: 50px solid transparent;
+//     border-right: 50px solid transparent;
+//     border-bottom: 25px solid white;
+//   }
+// `;
 
 export const BthHexa = styled.button`
   width: 80px;
