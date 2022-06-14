@@ -9,7 +9,7 @@ import { FETCH_USER_LOGGED_IN, LOG_OUT } from '../../queries';
 // import Menu from '@mui/material/Menu';
 import React, { useEffect, useState } from 'react';
 // import { BsFlower1 } from 'react-icons/bs';
-import { GiHamburgerMenu } from 'react-icons/gi';
+// import { GiHamburgerMenu } from 'react-icons/gi';
 
 interface IHeaderStyle {
   isOpen?: boolean;
@@ -38,7 +38,7 @@ const WrapperHeader = styled.div`
     width: 100%;
     /* justify-content: space-between; */
     padding: 0px 36px;
-    flex-direction: column;
+    /* flex-direction: column; */
   }
 `;
 
@@ -91,8 +91,9 @@ const WrapperHeaderMenu = styled.div`
   padding: 0% 10%;
 
   @media (max-width: 767px) {
-    flex-direction: column;
-    display: ${(props: IHeaderStyle) => (props.isOpen ? 'flex' : 'none')};
+    /* flex-direction: column;
+    display: ${(props: IHeaderStyle) => (props.isOpen ? 'flex' : 'none')}; */
+    display: none;
   }
 `;
 
@@ -158,9 +159,10 @@ const WrapperHeaderInfo = styled.div`
   line-height: 20px;
   text-align: center;
   @media (max-width: 767px) {
-    flex-direction: column;
+    width: auto;
+    /* flex-direction: column;
     display: ${(props: IHeaderStyle) => (props.isOpen ? 'flex' : 'none')};
-    padding: 3% 0%;
+    padding: 3% 0%; */
   }
 `;
 
@@ -174,7 +176,7 @@ const SpanPoint = styled.span`
   line-height: 21px;
   text-align: center;
   color: #ffffff;
-  text-overflow: ellipsis;
+  margin-right: 5px;
 `;
 
 const SpanLogin = styled.span`
@@ -185,10 +187,18 @@ const SpanLogin = styled.span`
   line-height: 21px;
   text-align: center;
   color: #ffffff;
-  margin-left: 20px;
-  :hover {
-    cursor: pointer;
-  }
+  margin-right: 20px;
+`;
+
+const SpanP = styled.span`
+  font-family: 'Istok Web';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  color: #ffffff;
+  margin-right: 10px;
 `;
 
 const WrapperPoint = styled.div`
@@ -204,23 +214,23 @@ const WrapperPoint = styled.div`
   }
 `;
 
-const IconToggle = styled(GiHamburgerMenu)`
-  font-size: 18px;
-  text-align: center;
-  color: #ffffff;
-  display: none;
-  :hover {
-    color: #ffb950;
-    cursor: pointer;
-  }
+// const IconToggle = styled(GiHamburgerMenu)`
+//   font-size: 18px;
+//   text-align: center;
+//   color: #ffffff;
+//   display: none;
+//   :hover {
+//     color: #ffb950;
+//     cursor: pointer;
+//   }
 
-  @media (max-width: 767px) {
-    display: flex;
-    position: absolute;
-    top: 20px;
-    right: 10px;
-  }
-`;
+//   @media (max-width: 767px) {
+//     display: flex;
+//     position: absolute;
+//     top: 20px;
+//     right: 10px;
+//   }
+// `;
 
 export default function LayoutHeader() {
   const router = useRouter();
@@ -295,9 +305,9 @@ export default function LayoutHeader() {
     setOpenMenu(false);
   };
 
-  const onClickOpenMenu = () => {
-    setOpenMenu((prev) => !prev);
-  };
+  // const onClickOpenMenu = () => {
+  //   setOpenMenu((prev) => !prev);
+  // };
 
   const onClickMoveMypage = () => {
     if (!isToken) {
@@ -379,8 +389,9 @@ export default function LayoutHeader() {
                 {/* <MyPoint style={{ margin: '10' }} onClick={onClickCharge} /> */}
 
                 <SpanPoint>
-                  {data?.fetchUser.points.toLocaleString('ko-KR')} P
+                  {data?.fetchUser.points.toLocaleString('ko-KR')}
                 </SpanPoint>
+                <SpanP>P</SpanP>
               </WrapperPoint>
               <BtnHeader onClick={onClickLogOut}>LogOut</BtnHeader>
             </>
@@ -391,7 +402,7 @@ export default function LayoutHeader() {
             </>
           )}
         </WrapperHeaderInfo>
-        <IconToggle onClick={onClickOpenMenu} />
+        {/* <IconToggle onClick={onClickOpenMenu} /> */}
       </WrapperHeader>
     </Wrapper>
   );
