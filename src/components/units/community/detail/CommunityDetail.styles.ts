@@ -2,23 +2,20 @@ import styled from '@emotion/styled';
 import { GiHearts } from 'react-icons/gi';
 import { RiFileEditLine, RiDeleteBinLine } from 'react-icons/ri';
 import { BsListUl } from 'react-icons/bs';
-import { Image } from 'antd';
 
 export const OutWrapper = styled.div`
   background-color: white;
   display: flex;
   justify-content: center;
-  /* height: 100%; */
   height: 750px;
 `;
 
 export const Wrapper = styled.div`
   margin-top: 120px;
   width: 700px;
-  /* border: 1px solid blueviolet; */
   @media all and (max-width: 767px) {
-    margin-top: 100px;
-    width: 85%;
+    margin-top: 30px;
+    width: 90%;
   }
 `;
 
@@ -66,6 +63,7 @@ export const Date = styled.div`
 export const Body = styled.div`
   display: flex;
   justify-content: space-between;
+
   @media all and (max-width: 767px) {
     display: flex;
     flex-direction: column;
@@ -74,7 +72,6 @@ export const Body = styled.div`
   }
 `;
 
-// export const Img = styled(Image)`
 export const Img = styled.img`
   width: 300px;
   height: 350px;
@@ -83,9 +80,9 @@ export const Img = styled.img`
   border-radius: 10px;
   object-fit: cover;
   @media all and (max-width: 767px) {
-    width: 80%;
-    height: 250px;
-    margin-bottom: 15px;
+    width: 90%;
+    height: 200px;
+    margin-bottom: 30px;
   }
 `;
 
@@ -114,9 +111,11 @@ export const Detail = styled.div`
   border-radius: 10px;
   width: 350px;
   height: 350px;
+
   @media all and (max-width: 767px) {
-    width: 80%;
-    height: 250px;
+    width: 90%;
+    height: 200px;
+    padding: 15px;
   }
 `;
 
@@ -130,7 +129,8 @@ export const Title = styled.div`
 
 export const ContentsBox = styled.div`
   width: 100%;
-  height: 230px;
+  /* height: 230px; */
+  height: 90%;
   overflow: auto;
 `;
 
@@ -146,6 +146,10 @@ export const InnerWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  @media all and (max-width: 767px) {
+    margin: 0px 80px;
+    justify-content: space-evenly;
+  }
 `;
 
 export const BtnWrapper = styled.div`

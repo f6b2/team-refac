@@ -22,12 +22,20 @@ const Slider1 = styled(Slider)`
   @media (min-width: 768px) and (max-width: 1024px) {
     width: 85%;
     margin: 0px 15px;
-    padding-left: 30px;
+    padding-left: 20px;
   }
   @media screen and (max-width: 767px) {
     width: 85%;
     margin: 0px 15px;
     padding-left: 30px;
+    .slick-prev:before {
+      color: black;
+      font-size: 20px;
+    }
+    .slick-next:before {
+      color: black; // arrow 색상 변경
+      font-size: 20px; // arrow 크기 변경
+    }
   }
 `;
 
@@ -47,7 +55,7 @@ export default function CommunityListUI(props: ICommunityListUIProps) {
           infinite: true,
           speed: 800,
           rows: 2,
-          slidesPerRow: 2,
+          slidesPerRow: 1,
           slidesToScroll: 1,
         },
       },

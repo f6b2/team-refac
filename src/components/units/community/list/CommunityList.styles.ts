@@ -19,24 +19,23 @@ export const Header = styled.div`
   padding: 30px;
   width: 100%;
   @media (min-width: 768px) and (max-width: 1024px) {
-    width: 85%;
+    width: 95%;
+    margin-bottom: 20px;
   }
   @media all and (max-width: 767px) {
-    width: 85%;
+    width: 95%;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 `;
 
 export const PageName = styled.div`
   font-size: 40px;
   font-weight: 600;
-  /* @media (min-width: 768px) and (max-width: 1024px) {
-    font-size: 30px;
-    font-weight: 600;
-  }
   @media all and (max-width: 767px) {
     font-size: 30px;
     font-weight: 600;
-  } */
+  }
 `;
 
 export const Button = styled.div`
@@ -68,6 +67,9 @@ export const Body = styled.div`
   flex-direction: row;
   justify-content: center;
   width: 100%;
+  @media all and (max-width: 767px) {
+    width: 90%;
+  }
 `;
 
 export const ContentsWrapper = styled.div`
@@ -81,7 +83,7 @@ export const ContentsWrapper = styled.div`
 `;
 
 export const Img = styled.img`
-  width: 100%;
+  width: 90%;
   height: 150px;
   object-fit: cover;
   border: 2px solid none;
@@ -92,11 +94,6 @@ export const Img = styled.img`
     transform: scale(1.1);
     transition-duration: 0.5s;
   }
-  @media all and (max-width: 767px) {
-    width: 90%;
-    margin-bottom: 20px;
-    filter: drop-shadow(8px 8px 5px rgba(0, 0, 0, 0.25));
-  }
 `;
 
 export const InfoWrapper = styled.div`
@@ -104,8 +101,8 @@ export const InfoWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   margin-top: 10px;
-  width: 100%;
-  @media screen and (max-width: 767px) {
+  width: 90%;
+  @media all and (max-width: 767px) {
     width: 90%;
   }
 `;
@@ -143,6 +140,7 @@ export const LikesWrapper = styled.div`
   justify-content: flex-start;
   align-items: center;
 `;
+
 export const HeartsWrapper = styled.button`
   color: #ff5b5b;
   border: none;
