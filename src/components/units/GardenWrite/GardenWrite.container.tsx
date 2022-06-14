@@ -12,7 +12,7 @@ import { useRouter } from 'next/router';
 import { accessTokenState } from '../../../commons/store';
 import { useRecoilState } from 'recoil';
 
-export default function GardenWriteContainer() {
+export default function GardenWriteContainer(props: any) {
   const router = useRouter();
   const [isToken] = useRecoilState(accessTokenState);
   const [isContent, setIsContent] = useState('');
@@ -83,6 +83,8 @@ export default function GardenWriteContainer() {
       setIsContent('');
       setFileUrls([]);
       setVideoUrls('');
+      // eslint-disable-next-line no-unused-expressions
+      props.handleClose ? props.handleClose() : '';
       router.push(`/garden/${resultCreateBoard.createBoard.id}`);
     } catch (error) {
       if (error instanceof Error) alert(error.message);

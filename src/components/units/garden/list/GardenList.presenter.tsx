@@ -50,8 +50,8 @@ import InfiniteScroll from 'react-infinite-scroller';
 import GardenImg from '../gardenImg/gardenImg.container';
 import TranslateGarden from '../../../commons/translate/garden';
 import GardenSearch from '../search/GardenSearch.container';
-import _ from 'lodash';
 import { v4 as uuidv4 } from 'uuid';
+import GardenWriteBtn from './writebutton/writebutton';
 
 export default function GardenListUI(props: any) {
   return (
@@ -62,6 +62,7 @@ export default function GardenListUI(props: any) {
           <DailyWordContainer />
         </WrapperLeft>
         <Wrapper>
+          <GardenWriteBtn />
           <WrapperSearch>
             <InputSearchBar onChange={props.onChangeSearchKeyword} />
             <IconSearch />

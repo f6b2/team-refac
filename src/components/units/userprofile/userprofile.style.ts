@@ -68,6 +68,8 @@ export const WrapperColUserinfo = styled.div`
   background: #ffffff;
   box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.25);
   padding: 15px 19px;
+  border: 1px solid #dbdbdb;
+  border-radius: 25px;
 
   @media (max-width: 767px) {
     width: 100%;
@@ -85,6 +87,8 @@ export const WrapperMyContents = styled.div`
   height: auto;
   background-color: #fff;
   box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.25);
+  border: 1px solid #dbdbdb;
+  border-radius: 25px;
 
   @media (max-width: 767px) {
     width: 100%;
