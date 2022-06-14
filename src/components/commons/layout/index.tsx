@@ -4,6 +4,7 @@ import { ReactNode } from 'react';
 import { useRouter } from 'next/router';
 import LayoutHeader from './header';
 import Home from '../../../../pages';
+import BottomNav from './bottomnav';
 
 const WrapperLayout = styled.div`
   width: 100%;
@@ -54,6 +55,7 @@ export default function Layout(props: ILayoutProps) {
       {!isHiddenHeader && (
         <>
           <LayoutHeader />
+          <BottomNav />
           <BodyWrapper
             style={{ backgroundColor: `${isBodyColor ? '#ffb950' : 'white'}` }}
           >

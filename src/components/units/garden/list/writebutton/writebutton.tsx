@@ -11,8 +11,8 @@ export const ButtonWrite = styled.button`
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
 
   position: fixed;
-  right: 10px;
-  bottom: 20px;
+  right: 15px;
+  bottom: 80px;
   z-index: 10;
   border-radius: 50%;
   border: none;
