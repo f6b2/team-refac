@@ -30,6 +30,20 @@ export default function UserProfileUI(props: IUserProfilePresenter) {
     rows: 2,
     slidesPerRow: 4,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          dots: true,
+          infinite: true,
+          speed: 800,
+          rows: 2,
+          arrows: true,
+          slidesPerRow: 2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   // modal style
@@ -38,8 +52,8 @@ export default function UserProfileUI(props: IUserProfilePresenter) {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 538,
-    height: 524,
+    width: 'auto',
+    height: 'auto',
     bgcolor: 'background.paper',
     boxShadow: 24,
     p: 4,

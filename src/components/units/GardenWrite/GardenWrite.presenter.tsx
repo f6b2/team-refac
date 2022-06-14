@@ -147,7 +147,7 @@ export default function GardenWriteUI(props: IGardenWrite) {
           </>
         )}
       </L.WrapperDiv>
-      <L.ButtonFloat>+</L.ButtonFloat>
+      {/* <L.ButtonFloat>+</L.ButtonFloat> */}
     </>
   );
 }

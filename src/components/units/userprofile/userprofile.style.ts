@@ -40,6 +40,14 @@ export const WrapperRow = styled.div`
   height: 100%;
   margin-top: 102px;
   margin-bottom: 163px;
+  @media (max-width: 767px) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+    padding: 0px 10px;
+    height: auto;
+  }
 `;
 export const WrapperRowNoMargin = styled.div`
   display: flex;
@@ -60,6 +68,12 @@ export const WrapperColUserinfo = styled.div`
   background: #ffffff;
   box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.25);
   padding: 15px 19px;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    height: auto;
+    margin: 0px 20px;
+  }
 `;
 
 export const WrapperMyContents = styled.div`
@@ -71,6 +85,13 @@ export const WrapperMyContents = styled.div`
   height: auto;
   background-color: #fff;
   box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.25);
+
+  @media (max-width: 767px) {
+    width: 100%;
+    height: auto;
+    margin: 20px 20px;
+    padding: 10px 0px 40px 0px;
+  }
 `;
 
 export const WrapperRowEnd = styled.div`
@@ -199,11 +220,11 @@ export const SliderTab = styled(Slider)`
   height: 320px;
 
   .slick-prev {
-    left: -60px;
+    left: -30px;
     z-index: 10;
   }
   .slick-next {
-    right: -35px;
+    right: -25px;
     z-index: 10;
   }
   .slick-prev:before {
@@ -213,6 +234,10 @@ export const SliderTab = styled(Slider)`
   .slick-next:before {
     color: black; // arrow 색상 변경
     font-size: 25px; // arrow
+  }
+
+  @media (max-width: 767px) {
+    width: 300px;
   }
 `;
 
@@ -235,4 +260,11 @@ export const WrapperRowItem = styled.div`
   align-items: flex-start;
   width: 100%;
   height: auto;
+  @media (max-width: 767px) {
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    padding: 0px 10px;
+  }
 `;
