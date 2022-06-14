@@ -41,7 +41,7 @@ interface ILayoutProps {
 export default function Layout(props: ILayoutProps) {
   const router = useRouter();
 
-  const BODY_YELLOW = ['/signin', '/signup', '/profile/[id]'];
+  const BODY_YELLOW = [''];
 
   const HIDDEN_HEADER = ['/'];
 

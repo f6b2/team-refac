@@ -1,7 +1,7 @@
-import styled from "@emotion/styled";
-import { BsHeartFill, BsHeart } from "react-icons/bs";
-import { IoChatbubbleOutline } from "react-icons/io5";
-import { BsSearch } from "react-icons/bs";
+import styled from '@emotion/styled';
+import { BsHeartFill, BsHeart } from 'react-icons/bs';
+import { IoChatbubbleOutline } from 'react-icons/io5';
+import { BsSearch } from 'react-icons/bs';
 
 export const TmpDiv = styled.div`
   width: 100%;
@@ -31,6 +31,9 @@ export const WrapperLeft = styled.div`
   padding: 98px 47px 0px 0px;
   position: sticky;
   top: 60px;
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 export const Wrapper = styled.div`
