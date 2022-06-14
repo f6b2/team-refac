@@ -227,6 +227,8 @@ export const SubmitBtn = styled.button`
 `;
 
 export const TalkWrapper = styled.div`
+  width: 100%;
+  height: 100%;
   overflow: auto;
 `;
 
@@ -244,6 +246,8 @@ export const TalkMyBox = styled.div`
   @media (max-width: 767px) {
     width: 35%;
     margin-right: 20px;
+    margin-left: 0px;
+    margin-top: 0px;
   }
 `;
 
@@ -268,7 +272,9 @@ export const MyContent = styled.div`
 export const MyBoxWrapper = styled.div`
   @media (max-width: 767px) {
     width: 100%;
+    height: 100%;
     display: flex;
+    flex-direction: row;
     justify-content: flex-end;
   }
 `;
