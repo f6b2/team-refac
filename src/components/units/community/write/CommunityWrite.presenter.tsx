@@ -1,13 +1,13 @@
-import * as S from "./CommunityWrite.styles";
+import * as S from './CommunityWrite.styles';
+import ImageUpload from '../../../commons/upload';
+import { ICommunityBoardWriteUIProps } from './CommunityWrite.types';
+import { v4 as uuidv4 } from 'uuid';
+import { useRecoilState } from 'recoil';
+import { userInfoState } from '../../../../commons/store';
 // 에디터
-import dynamic from "next/dynamic";
-import "react-quill/dist/quill.snow.css";
-const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
-import ImageUpload from "../../../commons/upload";
-import { ICommunityBoardWriteUIProps } from "./CommunityWrite.types";
-import { v4 as uuidv4 } from "uuid";
-import { useRecoilState } from "recoil";
-import { userInfoState } from "../../../../commons/store";
+import dynamic from 'next/dynamic';
+import 'react-quill/dist/quill.snow.css';
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 
 export default function CommunityListUI(props: ICommunityBoardWriteUIProps) {
   const [userInfo] = useRecoilState(userInfoState);
@@ -15,7 +15,7 @@ export default function CommunityListUI(props: ICommunityBoardWriteUIProps) {
   const modules = {
     toolbar: [
       [{ header: [1, 2, 3, false] }],
-      ["bold", "blockquote"],
+      ['bold', 'blockquote'],
       [{ align: [] }, { color: [] }],
     ],
   };
@@ -24,10 +24,10 @@ export default function CommunityListUI(props: ICommunityBoardWriteUIProps) {
     <S.OutWrapper>
       <S.Wrapper>
         <S.InfoWrapper>
-          {userInfo?.image.includes("http") ? (
+          {userInfo?.image.includes('http') ? (
             <S.Profile src={userInfo?.image} />
           ) : (
-            <S.Profile src={"/image/defaultuser.png"} />
+            <S.Profile src={'/image/defaultuser.png'} />
           )}
           <S.Writer>{userInfo?.name}</S.Writer>
         </S.InfoWrapper>
@@ -40,10 +40,10 @@ export default function CommunityListUI(props: ICommunityBoardWriteUIProps) {
                 <S.ImageThumbnail key={uuidv4()} src={String(props.fileUrls)} />
               ) : (
                 <S.ImgWrapper>
-                    <ImageUpload
+                  <ImageUpload
                     onChangeFileUrls={props.onChangeFileUrls}
                     fileUrls={props.fileUrls}
-                    type={"community"}
+                    type={'community'}
                   />
                   <S.String>Upload Image</S.String>
                 </S.ImgWrapper>
@@ -55,16 +55,14 @@ export default function CommunityListUI(props: ICommunityBoardWriteUIProps) {
             {/* 제목 */}
             <S.TitleWrapper>
               <S.TitleInput
-                type="text"
-                placeholder="Enter your title here"
+                type='text'
+                placeholder='Enter your title here'
                 onChange={props.onChangeTitle}
-                defaultValue={props.data?.fetchCommunityBoard.title || ""}
+                defaultValue={props.data?.fetchCommunityBoard.title || ''}
               />
               <S.Error>{props.titleError}</S.Error>
             </S.TitleWrapper>
 
-            {/* 라인 */}
-            {/* <S.Line></S.Line> */}
             {/* 내용 */}
             <S.ReactQuillWrapper>
               {!props.isEdit && (
@@ -72,7 +70,7 @@ export default function CommunityListUI(props: ICommunityBoardWriteUIProps) {
                   <ReactQuill
                     onChange={props.onChangeContent}
                     modules={modules}
-                    placeholder={"Enter your story here"}
+                    placeholder={'Enter your story here'}
                   />
 
                   <S.Error>{props.contentError}</S.Error>
@@ -92,6 +90,23 @@ export default function CommunityListUI(props: ICommunityBoardWriteUIProps) {
             </S.ReactQuillWrapper>
             {/* 업로드버튼 */}
           </S.RightWrapper>
+          {/* 사진 */}
+          <S.LeftWrapper2>
+            <S.ImgBtn>
+              {props.fileUrls[0] ? (
+                <S.ImageThumbnail key={uuidv4()} src={String(props.fileUrls)} />
+              ) : (
+                <S.ImgWrapper>
+                  <ImageUpload
+                    onChangeFileUrls={props.onChangeFileUrls}
+                    fileUrls={props.fileUrls}
+                    type={'community'}
+                  />
+                  <S.String>Upload Image</S.String>
+                </S.ImgWrapper>
+              )}
+            </S.ImgBtn>
+          </S.LeftWrapper2>
         </S.ContentsWrapper>
         <S.BtnWrapper>
           <S.UploadBtn
@@ -99,7 +114,7 @@ export default function CommunityListUI(props: ICommunityBoardWriteUIProps) {
             isActive={props.isEdit ? true : props.isActive}
           >
             <S.MdUploadFileIcon />
-            {props.isEdit ? "Edit" : "Upload"}
+            {props.isEdit ? 'Edit' : 'Upload'}
           </S.UploadBtn>
         </S.BtnWrapper>
       </S.Wrapper>

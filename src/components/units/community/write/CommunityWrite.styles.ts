@@ -1,18 +1,26 @@
-import styled from "@emotion/styled";
-import { BsFileEarmarkImage } from "react-icons/bs";
-import { MdUploadFile } from "react-icons/md";
-import { IUploadBtnProps } from "../write/CommunityWrite.types";
+import styled from '@emotion/styled';
+import { BsFileEarmarkImage } from 'react-icons/bs';
+import { MdUploadFile } from 'react-icons/md';
+import { IUploadBtnProps } from '../write/CommunityWrite.types';
 
 export const OutWrapper = styled.div`
   background-color: white;
   display: flex;
   justify-content: center;
-  height: 730px;
 `;
 
 export const Wrapper = styled.div`
   margin-top: 64px;
   width: 700px;
+  @media all and (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 34px;
+    width: 85%;
+    height: 90%;
+  }
 `;
 
 export const InfoWrapper = styled.div`
@@ -21,6 +29,10 @@ export const InfoWrapper = styled.div`
   padding-bottom: 10px;
   margin-bottom: 34px;
   border-bottom: 1px solid #000000;
+  @media all and (max-width: 767px) {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 `;
 
 export const Profile = styled.img`
@@ -29,9 +41,6 @@ export const Profile = styled.img`
   height: 30px;
   filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.25));
   border-radius: 50px;
-
-  /* 완성 후 삭제 */
-  background-color: gray;
 `;
 
 export const Writer = styled.div`
@@ -47,11 +56,18 @@ export const ContentsWrapper = styled.div`
   justify-content: space-between;
   width: 700px;
   height: 350px;
+  @media all and (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 90%;
+  }
 `;
 
 export const LeftWrapper = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 52px;
@@ -64,6 +80,27 @@ export const LeftWrapper = styled.div`
   font-size: 11px;
   font-weight: 700;
   color: #999999;
+  @media all and (max-width: 767px) {
+    display: none;
+  }
+`;
+export const LeftWrapper2 = styled.div`
+  display: none;
+  @media all and (max-width: 767px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 21px 51px 0px 51px;
+    width: 100%;
+    height: 150px;
+    background: #dbdbdb;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #999999;
+  }
 `;
 
 export const IconWrapper = styled.div`
@@ -85,7 +122,13 @@ export const ImageThumbnail = styled.img`
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 20px;
+  @media all and (max-width: 767px) {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
 `;
+
 export const ImgWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -97,10 +140,17 @@ export const BsFileEarmarkIcon = styled(BsFileEarmarkImage)`
   font-size: 50px;
   color: #999999;
   cursor: pointer;
+  @media all and (max-width: 767px) {
+    font-size: 20px;
+  }
 `;
 
 export const String = styled.div`
   margin-top: 19px;
+  @media all and (max-width: 767px) {
+    margin-top: 0px;
+    /* display: none; */
+  }
 `;
 
 export const RightWrapper = styled.div`
@@ -111,12 +161,20 @@ export const RightWrapper = styled.div`
   background: #3a3939;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
+  @media all and (max-width: 767px) {
+    width: 100%;
+    height: 90%;
+    padding: 15px;
+  }
 `;
 
 export const TitleWrapper = styled.div`
   height: 29px;
   margin-bottom: 17px;
   width: 280px;
+  @media all and (max-width: 767px) {
+    width: 100%;
+  }
 `;
 
 export const TitleInput = styled.input`
@@ -135,12 +193,6 @@ export const TitleInput = styled.input`
   :focus {
     outline: none;
   }
-`;
-
-export const Line = styled.div`
-  width: 100%;
-  height: 1px;
-  border-bottom: 1px solid #cdcdcd;
 `;
 
 // 에디터
@@ -189,6 +241,9 @@ export const ReactQuillWrapper = styled.div`
   .ql-toolbar .ql-picker {
     color: #cdcdcd;
   }
+  @media all and (max-width: 767px) {
+    width: 100%;
+  }
 `;
 
 export const BtnWrapper = styled.div`
@@ -196,6 +251,9 @@ export const BtnWrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 45px;
+  @media all and (max-width: 767px) {
+    margin-top: 25px;
+  }
 `;
 
 export const UploadBtn = styled.button`
@@ -211,7 +269,7 @@ export const UploadBtn = styled.button`
   box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.25);
   border-radius: 17px;
   background-color: ${(props: IUploadBtnProps) =>
-    props.isActive ? "#FFB950" : "#3A3939"};
+    props.isActive ? '#FFB950' : '#3A3939'};
   cursor: pointer;
 `;
 
