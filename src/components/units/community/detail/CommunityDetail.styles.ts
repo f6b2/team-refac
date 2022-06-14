@@ -1,19 +1,25 @@
-import styled from "@emotion/styled";
-import { GiHearts } from "react-icons/gi";
-import { RiFileEditLine, RiDeleteBinLine } from "react-icons/ri";
-import { BsListUl } from "react-icons/bs";
-import { ICommunityDetailUIProps } from "./CommunityDetail.types";
+import styled from '@emotion/styled';
+import { GiHearts } from 'react-icons/gi';
+import { RiFileEditLine, RiDeleteBinLine } from 'react-icons/ri';
+import { BsListUl } from 'react-icons/bs';
+import { Image } from 'antd';
 
 export const OutWrapper = styled.div`
   background-color: white;
   display: flex;
   justify-content: center;
-  height: 730px;
+  /* height: 100%; */
+  height: 750px;
 `;
 
 export const Wrapper = styled.div`
   margin-top: 120px;
   width: 700px;
+  /* border: 1px solid blueviolet; */
+  @media all and (max-width: 767px) {
+    margin-top: 100px;
+    width: 85%;
+  }
 `;
 
 export const Header = styled.div`
@@ -60,15 +66,15 @@ export const Date = styled.div`
 export const Body = styled.div`
   display: flex;
   justify-content: space-between;
+  @media all and (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
 `;
 
-export const InnerWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  /* justify-content: space-between; */
-  align-items: center;
-`;
-
+// export const Img = styled(Image)`
 export const Img = styled.img`
   width: 300px;
   height: 350px;
@@ -76,6 +82,11 @@ export const Img = styled.img`
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   object-fit: cover;
+  @media all and (max-width: 767px) {
+    width: 80%;
+    height: 250px;
+    margin-bottom: 15px;
+  }
 `;
 
 export const LikesWrapper = styled.div`
@@ -103,6 +114,10 @@ export const Detail = styled.div`
   border-radius: 10px;
   width: 350px;
   height: 350px;
+  @media all and (max-width: 767px) {
+    width: 80%;
+    height: 250px;
+  }
 `;
 
 export const Title = styled.div`
@@ -123,6 +138,14 @@ export const Contents = styled.div`
   font-size: 13px;
   color: #ffffff;
   margin-bottom: 5px;
+`;
+
+export const InnerWrapper = styled.div`
+  display: flex;
+  margin: 0px 130px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const BtnWrapper = styled.div`

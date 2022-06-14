@@ -14,7 +14,7 @@ export default function ChatRoom() {
   const [users, setUsers] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
-  const ENDPOINT = '34.64.147.240:3001';
+  const ENDPOINT = 'https://team04backend.shop/';
   const [sendValid, setSendValid] = useState(true);
   const messageBoxRef = useRef();
 
