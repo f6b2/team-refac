@@ -159,3 +159,22 @@ export const MoveToLogin = styled.button`
     cursor: pointer;
   }
 `;
+
+export const ButtonFloat = styled.button`
+  display: none;
+  width: 60px;
+  height: 60px;
+  background-color: #ffb950;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  :hover {
+    cursor: pointer;
+  }
+  @media (max-width: 767px) {
+    display: flex;
+    position: absolute;
+    right: 0px;
+    bottom: -100px;
+  }
+`;

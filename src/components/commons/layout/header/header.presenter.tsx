@@ -111,11 +111,11 @@ const BtnHeader = styled.button`
   text-align: center;
   color: #ffffff;
   padding: 0px 20px;
+  border-bottom: 2px solid #ffb950;
 
   :hover {
     color: #ffb950;
     cursor: pointer;
-    border-bottom: 2px solid #ffb950;
   }
 
   @media (max-width: 767px) {
@@ -230,16 +230,17 @@ export default function LayoutHeader() {
   const [userLogOut] = useMutation(LOG_OUT);
   // const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [openMenu, setOpenMenu] = useState(false);
-  // const [isMenu, setIsMenu] = useState('');
-  // console.log(isMenu);
+  const [isMenu, setIsMenu] = useState('');
+  console.log(isMenu);
 
   useEffect(() => {
     setUserInfo(data?.fetchUser);
   }, [data]);
 
-  const onClickLogo = () => {
+  const onClickLogo = (event) => {
     router.push('/garden');
     setOpenMenu(false);
+    setIsMenu(event.currentTarget.id);
   };
 
   const onClickChat = () => {
@@ -319,7 +320,7 @@ export default function LayoutHeader() {
           <PLogoB>B</PLogoB>
         </WrapperLogo>
         <WrapperHeaderMenu isOpen={openMenu}>
-          <BtnHeader id={'garden'} onClick={onClickGarden}>
+          <BtnHeader id={'garden'} onClick={onClickGarden} isMenu={isMenu}>
             Garden
           </BtnHeader>
           <BtnHeader id={'community'} onClick={onClickCommunity}>
