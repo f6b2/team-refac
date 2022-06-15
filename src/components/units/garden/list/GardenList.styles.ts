@@ -48,7 +48,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: white;
-  padding-top: 45px;
+  // 검색창 고정
   @media (max-width: 767px) {
     width: 100%;
     padding-left: 10px;
@@ -260,14 +260,26 @@ export const SpanCommentCount = styled.span`
 `;
 
 export const WrapperSearch = styled.div`
-  width: 100%;
+  width: 540px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  // 검색창 고정시키기
+  padding-top: 100px;
+  padding-left: 8px;
+  margin-left: 10px;
+  position: fixed;
+  z-index: 5;
+  background-color: white;
   @media (max-width: 767px) {
     width: 105%;
+    padding-right: 10px;
     padding-left: 17px;
+    padding-top: 20px;
+    position: fixed;
+    z-index: 5;
+    background-color: white;
   }
 `;
 
