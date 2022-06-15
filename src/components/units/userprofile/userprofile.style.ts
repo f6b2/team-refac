@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import { BsHouseDoor } from 'react-icons/bs';
-import { AiOutlineFire } from 'react-icons/ai';
+import { BsHouseDoor, BsCreditCard } from 'react-icons/bs';
+// import { AiOutlineFire } from 'react-icons/ai';
 import { BiHive } from 'react-icons/bi';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -213,7 +213,7 @@ export const IconMyHive = styled(BiHive)`
   cursor: pointer;
 `;
 
-export const IconMyCharge = styled(AiOutlineFire)`
+export const IconMyCharge = styled(BsCreditCard)`
   color: ${(props: any) => (props.istab === 'mycharge' ? '#ffb950' : 'black')};
   font-size: 25px;
   cursor: pointer;

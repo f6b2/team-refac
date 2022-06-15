@@ -8,16 +8,21 @@ import MarkChatUnreadIcon from '@mui/icons-material/MarkChatUnread';
 import StoreIcon from '@mui/icons-material/Store';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import styled from '@emotion/styled';
-import router from 'next/router';
+import { useRouter } from 'next/router';
 import { accessTokenState, userInfoState } from '../../../../commons/store';
 import { useRecoilState } from 'recoil';
+
+interface IBottomNavProps {
+  handdleNav: boolean;
+}
 
 export const WapperBottonNav = styled.div`
   width: 100%;
   height: auto;
   display: none;
   @media (max-width: 767px) {
-    display: flex;
+    display: ${(props: IBottomNavProps) =>
+      props.handdleNav ? 'none' : 'flex'};
   }
 `;
 
@@ -25,6 +30,9 @@ export default function BottomNav() {
   const [value, setValue] = useState('Garden');
   const [isToken] = useRecoilState(accessTokenState);
   const [userInfo] = useRecoilState(userInfoState);
+  const router = useRouter();
+  const MOBIL_CHAT = ['/chat/[chatInfo]'];
+  const isChatRoom = MOBIL_CHAT.includes(router.pathname);
 
   const useStyles = makeStyles(() => ({
     root: {
@@ -71,7 +79,7 @@ export default function BottomNav() {
   };
 
   return (
-    <WapperBottonNav>
+    <WapperBottonNav handdleNav={isChatRoom}>
       <Paper
         sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 10 }}
         elevation={5}

@@ -14,6 +14,7 @@ import React, { useEffect, useState } from 'react';
 interface IHeaderStyle {
   isOpen?: boolean;
   isMenu?: string;
+  isHidden?: boolean;
 }
 
 const Wrapper = styled.div`
@@ -26,6 +27,10 @@ const Wrapper = styled.div`
   position: fixed;
   z-index: 100;
   padding: 12px 0px;
+
+  @media (max-width: 767px) {
+    display: ${(props: IHeaderStyle) => props.isHidden && 'none'};
+  }
 `;
 
 const WrapperHeader = styled.div`
@@ -243,6 +248,9 @@ export default function LayoutHeader() {
   // const [isMenu, setIsMenu] = useState('');
   // console.log(isMenu);
 
+  const HIDDEN_HEADER = ['/chat/[chatInfo]'];
+  const isHiddenHeader = HIDDEN_HEADER.includes(router.pathname);
+
   useEffect(() => {
     setUserInfo(data?.fetchUser);
   }, [data]);
@@ -322,7 +330,7 @@ export default function LayoutHeader() {
   };
 
   return (
-    <Wrapper>
+    <Wrapper isHidden={isHiddenHeader}>
       <WrapperHeader>
         <WrapperLogo id={'garden'} onClick={onClickLogo}>
           <PLogoLang>Lang</PLogoLang>
