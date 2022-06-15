@@ -8,7 +8,3 @@ export const globalStyles = css`
     font-family: 'Noto Sans', sans-serif;
   }
 `;
-
-export const Primary = `
-color: #ffb950;
-`;
