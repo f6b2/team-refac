@@ -31,6 +31,10 @@ export const GardenImageUpload = styled(AiOutlineFileImage)`
   :hover {
     cursor: pointer;
   }
+
+  @media (max-width: 767px) {
+    font-size: 30px;
+  }
 `;
 
 export default function ImageUpload(props: {

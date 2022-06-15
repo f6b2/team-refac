@@ -147,6 +147,9 @@ export const GardenRecordUpload = styled(AiOutlineVideoCamera)`
   :hover {
     cursor: pointer;
   }
+  @media (max-width: 767px) {
+    font-size: 30px;
+  }
 `;
 
 export const MoveToLogin = styled.button`

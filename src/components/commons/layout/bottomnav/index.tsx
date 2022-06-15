@@ -81,11 +81,11 @@ export default function BottomNav() {
   return (
     <WapperBottonNav handdleNav={isChatRoom}>
       <Paper
-        sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 10 }}
+        sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 20 }}
         elevation={5}
       >
         <BottomNavigation
-          sx={{ width: '100%' }}
+          sx={{ width: '100%', paddingLeft: 15, paddingRight: 15 }}
           value={value}
           onChange={handleChange}
         >
@@ -119,8 +119,8 @@ export default function BottomNav() {
           />
           <BottomNavigationAction
             classes={classes}
-            label='Mypage'
-            value='Mypage'
+            label='My'
+            value='My'
             icon={<AccountCircleIcon />}
             onClick={onClickMoveMypage}
           />

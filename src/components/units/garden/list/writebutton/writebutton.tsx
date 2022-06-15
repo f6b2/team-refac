@@ -24,6 +24,13 @@ export const ButtonWrite = styled.button`
     justify-content: center;
     align-items: center;
   }
+
+  :hover {
+    cursor: pointer;
+  }
+  :active {
+    transform: scale(0.9);
+  }
 `;
 
 export const AddIcon = styled(AiOutlinePlus)`
