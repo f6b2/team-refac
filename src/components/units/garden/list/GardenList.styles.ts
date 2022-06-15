@@ -51,7 +51,9 @@ export const Wrapper = styled.div`
   padding-top: 45px;
   @media (max-width: 767px) {
     width: 100%;
-    margin-left: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 60px;
   }
 `;
 export const WrapperRight = styled.div`
@@ -88,6 +90,9 @@ export const InputSearchBar = styled.input`
   border-radius: 25px;
   :focus {
     outline: none;
+  }
+  @media (max-width: 767px) {
+    width: 100%;
   }
 `;
 
@@ -259,6 +264,11 @@ export const WrapperSearch = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
+  @media (max-width: 767px) {
+    width: 105%;
+    padding-left: 17px;
+  }
 `;
 
 export const IconSearch = styled(BsSearch)`

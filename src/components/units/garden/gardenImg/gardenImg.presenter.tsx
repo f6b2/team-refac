@@ -8,6 +8,9 @@ import 'antd/dist/antd.css';
 const SliderChild = styled.div`
   width: 450px;
   height: 284px;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 `;
 
 const SliderGarden = styled(Slider)`
@@ -15,6 +18,9 @@ const SliderGarden = styled(Slider)`
   height: 284px;
   margin-top: 25px;
   margin-bottom: 10px;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 
   .slick-prev:before,
   .slick-next:before {
@@ -60,6 +66,9 @@ const Image1 = styled.img`
   height: 284px;
   object-fit: cover;
   border-radius: 10px;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 `;
 
 const Video = styled.video`
@@ -67,12 +76,16 @@ const Video = styled.video`
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 `;
 
 const Wrapper = styled.div`
   margin-bottom: 10px;
   @media (max-width: 767px) {
-    display: none;
+    /* display: none; */
+    width: 100%;
   }
 `;
 
