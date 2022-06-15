@@ -11,4 +11,5 @@ export interface IHeaderUI {
   onClickLogOut: () => void;
   onClickSignUp: () => void;
   onClickSignIn: () => void;
+  currentPage: any;
 }

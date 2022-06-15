@@ -39,6 +39,9 @@ export const GardenVideoUpload = styled(ImFileVideo)`
   :hover {
     cursor: pointer;
   }
+  @media (max-width: 767px) {
+    font-size: 27px;
+  }
 `;
 
 export default function VideoUpload(props: {

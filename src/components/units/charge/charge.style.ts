@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 
 interface IChargeStationStyle {
-  isSelect: any;
-  isClicked: any;
+  isSelect?: any;
+  isClicked?: any;
 }
 
 export const WrapperCol = styled.div`
@@ -204,51 +204,6 @@ export const WrapperRowBtn3 = styled.div`
   /* position: absolute;
   top: 450px; */
 `;
-
-// export const BtnPoint = styled.button`
-//   font-family: 'Noto Sans';
-//   position: relative;
-//   width: 100px;
-//   height: 55px;
-//   background: ${(props: IChargeStationStyle) =>
-//     props.isClicked ? '#ffb950' : '#ffffff'};
-//   border: ${(props: IChargeStationStyle) =>
-//     props.isClicked ? '#dbdbdb' : '#dfa349'};
-//   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
-//   font-style: normal;
-//   font-weight: 700;
-//   font-size: 15px;
-//   line-height: 24px;
-//   text-align: center;
-//   color: ${(props) => (props.isClicked ? '#ffffff' : '#000000')};
-//   :hover {
-//     border: #dfa349;
-//     background: #ffb950;
-//     color: white;
-//   }
-//   :before {
-//     content: '';
-//     position: absolute;
-//     top: -25px;
-//     left: 0;
-//     width: 0;
-//     height: 0;
-//     border-left: 50px solid transparent;
-//     border-right: 50px solid transparent;
-//     border-bottom: 25px solid white;
-//   }
-//   :after {
-//     content: '';
-//     position: absolute;
-//     bottom: -25px;
-//     left: 0;
-//     width: 0;
-//     height: 0;
-//     border-left: 50px solid transparent;
-//     border-right: 50px solid transparent;
-//     border-bottom: 25px solid white;
-//   }
-// `;
 
 export const BthHexa = styled.button`
   width: 80px;

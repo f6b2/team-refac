@@ -4,6 +4,7 @@ interface IHeaderStyle {
   isOpen?: boolean;
   isMenu?: string;
   isHidden?: boolean;
+  currentPage?: any;
 }
 
 export const Wrapper = styled.div`
@@ -93,7 +94,12 @@ export const BtnHeader = styled.button`
   font-size: 14px;
   line-height: 21px;
   text-align: center;
-  color: #ffffff;
+  color: ${(props: IHeaderStyle) =>
+    props.currentPage ? '#ffb950' : '#ffffff'};
+
+  border-bottom: ${(props: IHeaderStyle) =>
+    props.currentPage ? '2px solid #ffb950' : 'none'};
+
   padding: 0px 20px;
 
   :hover {
