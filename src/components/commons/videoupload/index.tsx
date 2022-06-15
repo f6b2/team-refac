@@ -31,6 +31,9 @@ export const RecordSaveButton = styled.button`
   color: white;
   margin: 0px;
   cursor: pointer;
+  :disabled {
+    background-color: #bdbdbd;
+  }
 `;
 
 export const GardenVideoUpload = styled(ImFileVideo)`
@@ -48,7 +51,7 @@ export default function VideoUpload(props: {
   onChangeVideoUrls?: (fileUrl: string) => void;
   videoUrls?: Array<string>;
   type?: string;
-  recordUrls?: Array<string>;
+  recordUrls?: any;
   handleClose?: () => void;
 }) {
   const fileRef = useRef<HTMLInputElement>(null);
@@ -99,6 +102,8 @@ export default function VideoUpload(props: {
     }
   };
 
+  console.log(props?.recordUrls?.size);
+
   return (
     <>
       <UploadVideoWrapper>
@@ -118,7 +123,10 @@ export default function VideoUpload(props: {
         />
       </UploadVideoWrapper>
       {props.type === 'record' && (
-        <RecordSaveButton onClick={onClickRecordUpload}>
+        <RecordSaveButton
+          onClick={onClickRecordUpload}
+          disabled={!props?.recordUrls?.size}
+        >
           저장하기
         </RecordSaveButton>
       )}
