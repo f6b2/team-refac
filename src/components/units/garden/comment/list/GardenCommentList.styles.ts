@@ -1,6 +1,12 @@
-import styled from "@emotion/styled";
-import TimeAgo from "timeago-react";
-import { BsHeartFill, BsHeart } from "react-icons/bs";
+import styled from '@emotion/styled';
+import TimeAgo from 'timeago-react';
+import { BsHeartFill, BsHeart } from 'react-icons/bs';
+
+export const MotherDiv = styled.div`
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+`;
 
 export const CommentListBox = styled.div`
   width: 100%;

@@ -3,6 +3,12 @@ import { BsHeartFill, BsHeart } from 'react-icons/bs';
 import { IoChatbubbleOutline } from 'react-icons/io5';
 import { BsSearch } from 'react-icons/bs';
 
+export const MotherDiv = styled.div`
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+`;
+
 export const TmpDiv = styled.div`
   width: 100%;
   height: 60px;
@@ -43,6 +49,10 @@ export const Wrapper = styled.div`
   align-items: center;
   background-color: white;
   padding-top: 45px;
+  @media (max-width: 767px) {
+    width: 100%;
+    margin-left: 20px;
+  }
 `;
 export const WrapperRight = styled.div`
   width: 236px;
@@ -55,6 +65,15 @@ export const WrapperRight = styled.div`
   top: 60px;
   margin-left: 50px;
   padding: 98px 0px 0px 0px;
+  @media (max-width: 767px) {
+    display: none;
+  }
+`;
+
+export const ListWrapper = styled.div`
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 `;
 
 export const InputSearchBar = styled.input`
@@ -79,12 +98,19 @@ export const GardenListBox = styled.main`
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
   margin-bottom: 17px;
+  @media (max-width: 767px) {
+    width: 100%;
+    /* display: none; */
+  }
 `;
 
 export const WriterInfoBox = styled.section`
   display: flex;
   flex-direction: row;
   align-items: center;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 `;
 
 export const WriterProfile = styled.img`

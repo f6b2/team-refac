@@ -2,10 +2,8 @@ import GardenCommentList from '../comment/list/GardenCommentList.container';
 import GardenCommentWrite from '../comment/write/GardenCommentWrite.container';
 import {
   CommentCount,
-  CommentListBtn,
   Contents,
   ContentsBox,
-  ContentsTranslate,
   ContentsTranslateBox,
   CreatedAt,
   GardenListBox,
@@ -30,13 +28,10 @@ import {
   IconSearch,
   WrapperIconRow,
   DivTmp,
+  MotherDiv,
+  ListWrapper,
 } from './GardenList.styles';
-import {
-  MdQuestionAnswer,
-  MdThumbUp,
-  MdBookmarkBorder,
-  MdBookmark,
-} from 'react-icons/md';
+import { MdBookmarkBorder, MdBookmark } from 'react-icons/md';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { motion } from 'framer-motion';
 import GardenBestList from '../bestList/GardenBestList.container';
@@ -55,7 +50,7 @@ import GardenWriteBtn from './writebutton/writebutton';
 
 export default function GardenListUI(props: any) {
   return (
-    <>
+    <MotherDiv>
       <GardenWrapper>
         <WrapperLeft>
           <GardenWriteContainer />
@@ -76,9 +71,10 @@ export default function GardenListUI(props: any) {
                 pageStart={0}
                 loadMore={props.loadFunc}
                 hasMore={true}
+                style={{ width: '100%' }}
               >
                 {props.data?.fetchBoards.map((el: any, index: any) => (
-                  <div key={String(uuidv4())}>
+                  <ListWrapper key={String(uuidv4())}>
                     {props.loginUserInfo?.newLang === el.writer.myLang ? (
                       <GardenListBox>
                         <WriterInfoBox>
@@ -249,11 +245,13 @@ export default function GardenListUI(props: any) {
                                 onClick={props.onClickCommentListBtn(index)}
                                 id={el.id}
                                 size={20}
-                                style={{
-                                  marginLeft: '320px',
-                                  marginBottom: '5px',
-                                  cursor: 'pointer',
-                                }}
+                                style={
+                                  {
+                                    // marginLeft: '320px',
+                                    // marginBottom: '5px',
+                                    // cursor: 'pointer',
+                                  }
+                                }
                               />
                             </LikeAndCommentCount>
                           </LikeAndCommentCountBox>
@@ -455,7 +453,7 @@ export default function GardenListUI(props: any) {
                     ) : (
                       ''
                     )}
-                  </div>
+                  </ListWrapper>
                 )) || <div></div>}
               </InfiniteScroll>
             </>
@@ -465,6 +463,6 @@ export default function GardenListUI(props: any) {
           <ArchiveContainer />
         </WrapperRight>
       </GardenWrapper>
-    </>
+    </MotherDiv>
   );
 }

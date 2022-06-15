@@ -71,6 +71,9 @@ const Video = styled.video`
 
 const Wrapper = styled.div`
   margin-bottom: 10px;
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 export default function GardenImgUI(props: any) {
