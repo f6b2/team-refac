@@ -1,7 +1,7 @@
-import { GardenBestListBox } from "./GardenBestList.styles";
-import { motion } from "framer-motion";
-import GardenBestBox from "./GardenBestBox";
-import { v4 as uuidv4 } from "uuid";
+import { GardenBestListBox } from './GardenBestList.styles';
+import { motion } from 'framer-motion';
+import GardenBestBox from './GardenBestBox';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function GardenBestListUI(props: any) {
   return (

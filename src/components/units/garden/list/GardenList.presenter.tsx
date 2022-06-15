@@ -241,18 +241,16 @@ export default function GardenListUI(props: any) {
                                 </Like>
                               )}
 
-                              <MdKeyboardArrowDown
+                              {/* <MdKeyboardArrowDown
                                 onClick={props.onClickCommentListBtn(index)}
                                 id={el.id}
                                 size={20}
-                                style={
-                                  {
-                                    // marginLeft: '320px',
-                                    // marginBottom: '5px',
-                                    // cursor: 'pointer',
-                                  }
-                                }
-                              />
+                                style={{
+                                  marginLeft: '177px',
+                                  marginBottom: '5px',
+                                  cursor: 'pointer',
+                                }}
+                              /> */}
                             </LikeAndCommentCount>
                           </LikeAndCommentCountBox>
                         </ContentsBox>
