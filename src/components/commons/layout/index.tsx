@@ -2,9 +2,10 @@
 import styled from '@emotion/styled';
 import { ReactNode } from 'react';
 import { useRouter } from 'next/router';
-import LayoutHeader from './header';
+// import LayoutHeader from './header';
 import Home from '../../../../pages';
 import BottomNav from './bottomnav';
+import HeaderContainer from './header/header.container';
 
 interface ILayoutStyleProps {
   handlepadding: boolean;
@@ -62,7 +63,7 @@ export default function Layout(props: ILayoutProps) {
       {isHiddenHeader && <Home />}
       {!isHiddenHeader && (
         <>
-          <LayoutHeader />
+          <HeaderContainer />
           <BottomNav />
           <BodyWrapper
             style={{ backgroundColor: `${isBodyColor ? '#ffb950' : 'white'}` }}
