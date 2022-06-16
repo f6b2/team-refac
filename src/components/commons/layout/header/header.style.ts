@@ -7,7 +7,7 @@ interface IHeaderStyle {
   currentPage?: any;
 }
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.header`
   width: 100%;
   display: flex;
   flex-direction: row;

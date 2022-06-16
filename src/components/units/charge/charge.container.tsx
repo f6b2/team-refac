@@ -66,7 +66,6 @@ export default function ChargeStation() {
         buyer_postcode: '',
       },
       async (rsp: any) => {
-        console.log(rsp);
         if (rsp.success) {
           await buyPoint({
             variables: {
