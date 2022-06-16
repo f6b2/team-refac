@@ -1,13 +1,15 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
-  background: #ffb950;
   width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 69px;
+  @media (max-width: 767px) {
+    margin-top: 12.5%;
+  }
 `;
 
 export const SignUpTitle = styled.h1`
@@ -27,7 +29,12 @@ export const SignUpBox = styled.main`
   flex-direction: column;
   align-items: center;
   box-shadow: 30px 30px 10px rgba(0, 0, 0, 0.25);
-  border-radius: 50px 0px;
+  border-radius: 25px;
+  border: 1px solid #dbdbdb;
+  @media (max-width: 767px) {
+    width: 90%;
+    box-shadow: none;
+  }
 `;
 
 export const EmailInputBox = styled.section`
@@ -55,6 +62,9 @@ export const EmailInput = styled.input`
   :disabled {
     background: none;
   }
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
 `;
 
 export const AuthCallBtn = styled.button`
@@ -71,6 +81,10 @@ export const AuthCallBtn = styled.button`
 
   :disabled {
     background: gray;
+  }
+  @media (max-width: 767px) {
+    font-size: 13px;
+    height: 22px;
   }
 `;
 
@@ -100,6 +114,9 @@ export const AuthInput = styled.input`
   :disabled {
     background: none;
   }
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
 `;
 
 export const AuthSubmitBtn = styled.button`
@@ -115,6 +132,11 @@ export const AuthSubmitBtn = styled.button`
 
   :disabled {
     background: gray;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 13px;
+    height: 22px;
   }
 `;
 
@@ -141,6 +163,9 @@ export const PasswordInput = styled.input`
   :focus::-webkit-input-placeholder {
     opacity: 0;
   }
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
 `;
 
 export const RePasswordInputBox = styled.section`
@@ -165,6 +190,9 @@ export const RePasswordInput = styled.input`
   }
   :focus::-webkit-input-placeholder {
     opacity: 0;
+  }
+  @media (max-width: 767px) {
+    font-size: 16px;
   }
 `;
 
@@ -193,6 +221,9 @@ export const Select1 = styled.select`
   }
   color: #767676;
   cursor: pointer;
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
 `;
 
 export const SelectList = styled.option``;
@@ -211,6 +242,9 @@ export const Select2 = styled.select`
   }
   color: #767676;
   cursor: pointer;
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
 `;
 
 export const SignUpBtn = styled.button`
@@ -229,6 +263,10 @@ export const SignUpBtn = styled.button`
   :disabled {
     background: gray;
   }
+  @media (max-width: 767px) {
+    font-size: 16px;
+    margin-top: 60px;
+  }
 `;
 
 export const VisibleBtn = styled.button`
@@ -243,6 +281,9 @@ export const Error = styled.div`
   font-weight: 400;
   font-size: 8px;
   color: #ed1c24;
+  @media (max-width: 767px) {
+    font-size: 12px;
+  }
 `;
 
 export const SelectError = styled.div`
@@ -250,4 +291,7 @@ export const SelectError = styled.div`
   font-weight: 400;
   font-size: 8px;
   color: #ed1c24;
+  @media (max-width: 767px) {
+    font-size: 12px;
+  }
 `;
