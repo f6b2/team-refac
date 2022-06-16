@@ -22,10 +22,10 @@ import {
   SignUpTitle,
   VisibleBtn,
   Wrapper,
-} from "./SignUp.styles";
-import "antd/dist/antd.css";
-import { Select } from "antd";
-import { AiOutlineEye } from "react-icons/ai";
+} from './SignUp.styles';
+import 'antd/dist/antd.css';
+import { Select } from 'antd';
+import { AiOutlineEye } from 'react-icons/ai';
 
 export default function SignUpUI(props: any) {
   const { Option } = Select;
@@ -36,13 +36,13 @@ export default function SignUpUI(props: any) {
           <SignUpTitle>Sign Up</SignUpTitle>
           <EmailInputBox>
             <EmailInput
-              placeholder="Enter your email"
-              {...props.register("email")}
+              placeholder='Enter your email'
+              {...props.register('email')}
               disabled={props.authDisable}
               onChange={props.onChangeEmail}
             />
             <AuthCallBtn
-              type="button"
+              type='button'
               onClick={props.onClickAuthCall}
               disabled={props.authDisable}
             >
@@ -52,12 +52,12 @@ export default function SignUpUI(props: any) {
           <Error>{props.emailError}</Error>
           <AuthInputBox>
             <AuthInput
-              placeholder="Enter your verification code"
+              placeholder='Enter your verification code'
               onChange={props.onChangeAuthNum}
               disabled={props.authCheckDisable}
             />
             <AuthSubmitBtn
-              type="button"
+              type='button'
               onClick={props.onClickAuthNumCheck}
               disabled={props.authCheckDisable}
             >
@@ -67,29 +67,29 @@ export default function SignUpUI(props: any) {
           <Error>{props.authError}</Error>
           <PasswordInputBox>
             <PasswordInput
-              placeholder="Enter your password"
-              {...props.register("password")}
+              placeholder='Enter your password'
+              {...props.register('password')}
               type={props.passwordVisible}
             />
-            <VisibleBtn type="button" onClick={props.onClickVisible}>
+            <VisibleBtn type='button' onClick={props.onClickVisible}>
               <AiOutlineEye />
             </VisibleBtn>
           </PasswordInputBox>
           <Error>{props.passwordError}</Error>
           <RePasswordInputBox>
             <RePasswordInput
-              placeholder="Password check"
-              {...props.register("rePassword")}
+              placeholder='Password check'
+              {...props.register('rePassword')}
               type={props.rePasswordVisible}
             />
-            <VisibleBtn type="button" onClick={props.onClickReVisible}>
+            <VisibleBtn type='button' onClick={props.onClickReVisible}>
               <AiOutlineEye />
             </VisibleBtn>
           </RePasswordInputBox>
           <Error>{props.rePasswordError}</Error>
           <LangSelectBox>
             <SelectBox1>
-              <Select1 defaultValue={"My Lang"} {...props.register("myLang")}>
+              <Select1 defaultValue={'My Lang'} {...props.register('myLang')}>
                 <SelectList disabled={true}>My Lang</SelectList>
                 <SelectList>한국어</SelectList>
                 <SelectList>English</SelectList>
@@ -102,8 +102,8 @@ export default function SignUpUI(props: any) {
             </SelectBox1>
             <SelectBox2>
               <Select2
-                defaultValue={"Learn Lang"}
-                {...props.register("learnLang")}
+                defaultValue={'Learn Lang'}
+                {...props.register('learnLang')}
               >
                 <SelectList disabled={true}>Learn Lang</SelectList>
                 <SelectList>한국어</SelectList>
@@ -116,7 +116,7 @@ export default function SignUpUI(props: any) {
               <SelectError>{props.learnLangError}</SelectError>
             </SelectBox2>
           </LangSelectBox>
-          <SignUpBtn disabled={props.signUpDisable}>회원가입</SignUpBtn>
+          <SignUpBtn disabled={props.signUpDisable}>Sign Up</SignUpBtn>
         </SignUpBox>
       </Wrapper>
     </form>

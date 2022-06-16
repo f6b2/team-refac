@@ -26,6 +26,7 @@ export const SignUpWrapperDiv = styled.div`
   @media (max-width: 767px) {
     width: 100%;
     padding: 10% 10%;
+    box-shadow: none;
   }
 `;
 
