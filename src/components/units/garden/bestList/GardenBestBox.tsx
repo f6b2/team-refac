@@ -12,8 +12,9 @@ const GardenBest = styled.div`
   cursor: pointer;
   position: relative;
   @media (max-width: 767px) {
-    width: 84px;
-    height: 175px;
+    /* width: 84px; */
+    width: 90%;
+    height: 180px;
     border-radius: 15px;
   }
 `;

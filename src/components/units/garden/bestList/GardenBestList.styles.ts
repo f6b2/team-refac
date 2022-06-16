@@ -10,5 +10,6 @@ export const GardenBestListBox = styled.div`
   @media (max-width: 767px) {
     margin-top: 71px;
     width: 100%;
+    padding-left: 2.5%;
   }
 `;
