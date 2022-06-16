@@ -102,8 +102,6 @@ export default function VideoUpload(props: {
     }
   };
 
-  console.log(props?.recordUrls?.size);
-
   return (
     <>
       <UploadVideoWrapper>
