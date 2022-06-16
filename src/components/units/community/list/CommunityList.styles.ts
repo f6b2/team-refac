@@ -126,7 +126,7 @@ export const Title = styled.div`
 export const Writer = styled.div`
   font-size: 10px;
   text-shadow: 15px 15px 10px rgba(0, 0, 0, 0.25);
-`;
+`; 
 
 export const Date = styled.div`
   font-size: 10px;
