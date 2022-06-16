@@ -8,6 +8,7 @@ export default function GardenBestListUI(props: any) {
     <GardenBestListBox>
       {props.data?.fetchBoards.map((el: any) => (
         <motion.div
+          style={{ width: '100%' }}
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.3 }}
           key={String(uuidv4())}
