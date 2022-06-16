@@ -7,7 +7,7 @@ export default function VideoRecord(props: IGardenWriteVideo) {
   const [recordUrls, setRecordUrls] = useState([]);
 
   const onRecordingComplete = (videoBlob: Blob) => {
-    const file = new File([videoBlob], `${uuidv4()}.webm`);
+    const file = new File([videoBlob], `${uuidv4()}.mp4`);
     // @ts-ignore
     setRecordUrls(file);
   };

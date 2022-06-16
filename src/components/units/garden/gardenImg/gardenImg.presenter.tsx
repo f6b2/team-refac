@@ -106,7 +106,12 @@ export default function GardenImgUI(props: any) {
         <SliderGarden {...settings}>
           {props.video !== '' ? (
             <SliderChild>
-              <Video src={props.video} controls />
+              <Video
+                src={`${props.video}#t=0.001`}
+                controls={true}
+                playsInline
+                preload='metadata'
+              />
             </SliderChild>
           ) : (
             ''
