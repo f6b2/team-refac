@@ -1,5 +1,5 @@
-import GardenCommentList from "../comment/list/GardenCommentList.container";
-import GardenCommentWrite from "../comment/write/GardenCommentWrite.container";
+import GardenCommentList from '../comment/list/GardenCommentList.container';
+import GardenCommentWrite from '../comment/write/GardenCommentWrite.container';
 import {
   CommentCount,
   CommentListBtn,
@@ -29,42 +29,44 @@ import {
   LikeOn,
   LikeOff,
   DivTmp,
-} from "./GardenSearch.styles";
+  MotherDiv,
+  ListWrapper,
+} from './GardenSearch.styles';
 import {
   MdQuestionAnswer,
   MdThumbUp,
   MdBookmark,
   MdBookmarkBorder,
   MdKeyboardArrowDown,
-} from "react-icons/md";
-import GardenBestList from "../bestList/GardenBestList.container";
+} from 'react-icons/md';
+import GardenBestList from '../bestList/GardenBestList.container';
 
-import { motion } from "framer-motion";
-import { getDate } from "../../../../commons/libraries/utils";
-import GardenWriteContainer from "../../GardenWrite/GardenWrite.container";
-import DailyWordContainer from "../../dailyword/dailyword.container";
-import ArchiveContainer from "../../archivelist/archivelist.container";
-import InfiniteScroll from "react-infinite-scroller";
-import GardenImg from "../gardenImg/gardenImg.container";
-import TranslateGarden from "../../../commons/translate/garden";
-import GardenSearch from "../search/GardenSearch.container";
-import { v4 as uuidv4 } from "uuid";
+import { motion } from 'framer-motion';
+import { getDate } from '../../../../commons/libraries/utils';
+import GardenWriteContainer from '../../GardenWrite/GardenWrite.container';
+import DailyWordContainer from '../../dailyword/dailyword.container';
+import ArchiveContainer from '../../archivelist/archivelist.container';
+import InfiniteScroll from 'react-infinite-scroller';
+import GardenImg from '../gardenImg/gardenImg.container';
+import TranslateGarden from '../../../commons/translate/garden';
+import GardenSearch from '../search/GardenSearch.container';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function GardenSearchUI(props: any) {
   return (
-    <>
+    <MotherDiv>
       <GardenWrapper>
         <Wrapper>
-          <div style={{ marginBottom: "15px", fontSize: "15px" }}>
-            Search Result for "{props.searchKeyword}"
+          <div style={{ marginBottom: '15px', fontSize: '15px' }}>
+            Search Result for "{props.searchKeyword}
           </div>
-          <>
+          <ListWrapper>
             {props.searchBoard?.searchBoardContent.map(
               (el: any, index: any) => (
                 <div key={index}>
                   <GardenListBox>
                     <WriterInfoBox>
-                      {el.writer.image.includes("http") ? (
+                      {el.writer.image.includes('http') ? (
                         <WriterProfile
                           onClick={props.onClickUserProfile}
                           id={el.writer.id}
@@ -74,7 +76,7 @@ export default function GardenSearchUI(props: any) {
                         <WriterProfile
                           onClick={props.onClickUserProfile}
                           id={el.writer.id}
-                          src={"/image/defaultuser.png"}
+                          src={'/image/defaultuser.png'}
                         />
                       )}
                       <WriterInfo>
@@ -95,11 +97,11 @@ export default function GardenSearchUI(props: any) {
                                     key={String(uuidv4())}
                                   >
                                     <MdBookmark
-                                      size={"22"}
+                                      size={'22'}
                                       onClick={() => props.onClickSaved(el)}
                                       style={{
-                                        cursor: "pointer",
-                                        color: "#FFB950",
+                                        cursor: 'pointer',
+                                        color: '#FFB950',
                                       }}
                                     />
                                   </motion.div>
@@ -110,17 +112,17 @@ export default function GardenSearchUI(props: any) {
                                     key={String(uuidv4())}
                                   >
                                     <MdBookmarkBorder
-                                      size={"22"}
+                                      size={'22'}
                                       onClick={() => props.onClickSaved(el)}
                                       style={{
-                                        cursor: "pointer",
-                                        color: "#FFB950",
+                                        cursor: 'pointer',
+                                        color: '#FFB950',
                                       }}
                                     />
                                   </motion.div>
                                 )
                               ) : (
-                                ""
+                                ''
                               )
                             )
                           ) : (
@@ -130,11 +132,11 @@ export default function GardenSearchUI(props: any) {
                               key={String(uuidv4())}
                             >
                               <MdBookmarkBorder
-                                size={"22"}
+                                size={'22'}
                                 onClick={() => props.onClickSaved(el)}
                                 style={{
-                                  cursor: "pointer",
-                                  color: "#FFB950",
+                                  cursor: 'pointer',
+                                  color: '#FFB950',
                                 }}
                               />
                             </motion.div>
@@ -164,7 +166,7 @@ export default function GardenSearchUI(props: any) {
                               transition={{ duration: 0.3 }}
                               key={String(uuidv4())}
                             >
-                              <CommentIcon size={"13"} />{" "}
+                              <CommentIcon size={'13'} />{' '}
                             </motion.div>
                             <SpanCommentCount>
                               {el.commentsCount}
@@ -210,25 +212,25 @@ export default function GardenSearchUI(props: any) {
                                     </Like>
                                   )
                                 ) : (
-                                  ""
+                                  ''
                                 )
                             )
                           ) : (
                             <Like onClick={props.onClickLikeBoard} id={el.id}>
-                              <LikeOff size={"13"} /> {el.likes}
+                              <LikeOff size={'13'} /> {el.likes}
                             </Like>
                           )}
 
-                          <MdKeyboardArrowDown
+                          {/* <MdKeyboardArrowDown
                             onClick={props.onClickCommentListBtn(index)}
                             id={el.id}
                             size={20}
                             style={{
-                              marginLeft: "320px",
-                              marginBottom: "5px",
-                              cursor: "pointer",
+                              marginLeft: '320px',
+                              marginBottom: '5px',
+                              cursor: 'pointer',
                             }}
-                          />
+                          /> */}
                         </LikeAndCommentCount>
                       </LikeAndCommentCountBox>
                     </ContentsBox>
@@ -242,9 +244,9 @@ export default function GardenSearchUI(props: any) {
                 </div>
               )
             )}
-          </>
+          </ListWrapper>
         </Wrapper>
       </GardenWrapper>
-    </>
+    </MotherDiv>
   );
 }
