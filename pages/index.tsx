@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import Landing1 from '../src/components/commons/landing/landing1';
-import Landing2 from '../src/components/commons/landing/landing2';
+import Landing21 from '../src/components/commons/landing/landing21';
+import Landing22 from '../src/components/commons/landing/landing22';
+import Landing23 from '../src/components/commons/landing/landing23';
+import Landing3 from '../src/components/commons/landing/landing3';
 
 const Wrapper = styled.div`
   width: 100vw;
@@ -30,58 +30,27 @@ const Inner = styled.div`
   -ms-overflow-style: none; /* IE and Edge */
 `;
 
-const Slider1 = styled(Slider)`
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-
-  .slick-arrow {
-    display: none;
-  }
-`;
-
-const GardenLanding = styled.img`
-  width: 100%;
-  height: 100%;
-`;
-
-const CommunityLanding = styled.img`
-  width: 100%;
-  height: 100%;
-`;
-
-const ChatLanding = styled.img`
-  width: 100%;
-  height: 100%;
-`;
-
 export default function Home() {
-  const settings = {
-    dots: false,
-    arrows: false,
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    speed: 1000,
-    slidesPerRow: 1,
-    slidesToScroll: 1,
-  };
-
   return (
     <Wrapper>
       <Inner>
-        <Landing2 />
-      </Inner>
-      <Inner>
-        <Slider1 {...settings}>
-          <GardenLanding src='/landing/garden.png' />
-          <CommunityLanding src='/landing/community.png' />
-          <ChatLanding src='/landing/chat.png' />
-        </Slider1>
+        <Landing1 />
       </Inner>
 
       <Inner>
-        <Landing1 />
+        <Landing21 />
+      </Inner>
+
+      <Inner>
+        <Landing22 />
+      </Inner>
+
+      <Inner>
+        <Landing23 />
+      </Inner>
+
+      <Inner>
+        <Landing3 />
       </Inner>
     </Wrapper>
   );
