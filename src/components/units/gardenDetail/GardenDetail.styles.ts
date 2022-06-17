@@ -4,7 +4,7 @@ import { BsHeartFill, BsHeart } from 'react-icons/bs';
 import { IoChatbubbleOutline } from 'react-icons/io5';
 
 export const Outer = styled.div`
-  margin-top: 150px;
+  margin-top: 100px;
   width: 860px;
   @media all and (max-width: 768px) {
     margin-top: 50px;
