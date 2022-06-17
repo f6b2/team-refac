@@ -6,11 +6,12 @@ import { FETCH_SAVED_BOARDS, SAVE_BOARD } from '../../commons/queries';
 import { IBoard } from '../../../commons/types/generated/types';
 import { LIKE_BOARD } from './GardenDetail.queries';
 import { useRouter } from 'next/router';
-import { userInfoState } from '../../../commons/store';
+import { accessTokenState, userInfoState } from '../../../commons/store';
 import { useRecoilState } from 'recoil';
 
 export default function GardenDetail() {
   const router = useRouter();
+  const [isToken] = useRecoilState(accessTokenState);
 
   const { data } = useQuery(FETCH_BOARD, {
     variables: { boardId: router.query.boardId },
@@ -36,28 +37,32 @@ export default function GardenDetail() {
 
   // 좋아요 클릭
   const onClickLikeBoard = async (event: any) => {
-    try {
-      await likeBoard({
-        variables: {
-          boardId: event.currentTarget.id,
-        },
-        refetchQueries: [
-          {
-            query: FETCH_BOARD,
-            variables: {
-              boardId: event.currentTarget.id,
-            },
+    if (isToken) {
+      try {
+        await likeBoard({
+          variables: {
+            boardId: event.currentTarget.id,
           },
-          {
-            query: FETCH_SAVED_BOARDS,
-            variables: {
-              userId: loginInfo.id,
+          refetchQueries: [
+            {
+              query: FETCH_BOARD,
+              variables: {
+                boardId: event.currentTarget.id,
+              },
             },
-          },
-        ],
-      });
-    } catch (error) {
-      alert(error);
+            {
+              query: FETCH_SAVED_BOARDS,
+              variables: {
+                userId: loginInfo.id,
+              },
+            },
+          ],
+        });
+      } catch (error) {
+        alert(error);
+      }
+    } else {
+      alert('Please Log in');
     }
   };
 

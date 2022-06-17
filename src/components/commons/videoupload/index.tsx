@@ -8,6 +8,8 @@ import {
 import styled from '@emotion/styled';
 import { UPLOAD_FILE } from '../queries';
 import { ImFileVideo } from 'react-icons/im';
+import { accessTokenState } from '../../../commons/store';
+import { useRecoilState } from 'recoil';
 
 export const UploadVideoWrapper = styled.div`
   width: auto;
@@ -61,6 +63,7 @@ export default function VideoUpload(props: {
     Pick<IMutation, 'uploadFile'>,
     IMutationUploadFileArgs
   >(UPLOAD_FILE);
+  const [isToken] = useRecoilState(accessTokenState);
 
   const onChangeFile = async (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -82,7 +85,11 @@ export default function VideoUpload(props: {
   };
 
   const onClickVideo = () => {
-    fileRef.current?.click();
+    if (isToken) {
+      fileRef.current?.click();
+    } else {
+      alert('Please Log in');
+    }
   };
 
   // record

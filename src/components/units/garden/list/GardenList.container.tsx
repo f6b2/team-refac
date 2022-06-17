@@ -31,7 +31,7 @@ export default function GardenList() {
     },
   });
   const [likeBoard] = useMutation(LIKE_BOARD);
-  const [isToken, setIsToken] = useRecoilState(accessTokenState);
+  const [isToken] = useRecoilState(accessTokenState);
 
   const [commentListVal, setCommentListVal] = useState([false]);
   const onClickCommentListBtn = (index: any) => (event: any) => {
@@ -41,48 +41,56 @@ export default function GardenList() {
   };
 
   const onClickLikeBoard = async (event: any) => {
-    try {
-      await likeBoard({
-        variables: {
-          boardId: event.currentTarget.id,
-        },
-        refetchQueries: [
-          {
-            query: FETCH_BOARDS,
-            variables: {
-              boardId: event.currentTarget.id,
-            },
+    if (isToken) {
+      try {
+        await likeBoard({
+          variables: {
+            boardId: event.currentTarget.id,
           },
-          {
-            query: FETCH_SAVED_BOARDS,
-            variables: {
-              userId: loginUserInfo.id,
+          refetchQueries: [
+            {
+              query: FETCH_BOARDS,
+              variables: {
+                boardId: event.currentTarget.id,
+              },
             },
-          },
-        ],
-      });
-    } catch (error) {
-      alert(error);
+            {
+              query: FETCH_SAVED_BOARDS,
+              variables: {
+                userId: loginUserInfo.id,
+              },
+            },
+          ],
+        });
+      } catch (error) {
+        alert(error);
+      }
+    } else {
+      alert('Please Log in');
     }
   };
 
   const onClickSaved = async (data: IBoard) => {
-    try {
-      const result = await saveGarden({
-        variables: {
-          boardId: data.id,
-        },
-        refetchQueries: [
-          {
-            query: FETCH_SAVED_BOARDS,
-            variables: {
-              userId: loginUserInfo.id,
-            },
+    if (isToken) {
+      try {
+        const result = await saveGarden({
+          variables: {
+            boardId: data.id,
           },
-        ],
-      });
-    } catch (error) {
-      if (error instanceof Error) alert(error.message);
+          refetchQueries: [
+            {
+              query: FETCH_SAVED_BOARDS,
+              variables: {
+                userId: loginUserInfo.id,
+              },
+            },
+          ],
+        });
+      } catch (error) {
+        if (error instanceof Error) alert(error.message);
+      }
+    } else {
+      alert('Please Log in');
     }
   };
 
@@ -104,10 +112,8 @@ export default function GardenList() {
     router.push(`/profile/${event.target.id}`);
   };
 
-
-  const [searchKeyword, setSearchKeyword] = useState("");
+  const [searchKeyword, setSearchKeyword] = useState('');
   const onChangeSearchKeyword = (event: any) => {
-
     setSearchKeyword(event.target.value);
   };
 
