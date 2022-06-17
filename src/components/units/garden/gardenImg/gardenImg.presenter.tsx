@@ -109,7 +109,7 @@ export default function GardenImgUI(props: any) {
               <Video
                 src={`${props.video}#t=0.001`}
                 controls={true}
-                playsInline
+                playsInline={true}
                 preload='metadata'
               />
             </SliderChild>

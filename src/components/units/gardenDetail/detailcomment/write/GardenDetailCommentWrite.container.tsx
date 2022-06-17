@@ -2,7 +2,7 @@ import { useMutation, useQuery } from '@apollo/client';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { useRecoilState } from 'recoil';
-import { userInfoState } from '../../../../../commons/store';
+import { accessTokenState, userInfoState } from '../../../../../commons/store';
 import {
   CREATE_COMMENT,
   FETCH_COMMENTS,
@@ -16,37 +16,42 @@ export default function GardenCommentWrite(props: any) {
   const [updateComment] = useMutation(UPDATE_COMMENT);
   const [comment, setComment] = useState('');
   const router = useRouter();
+  const [isToken] = useRecoilState(accessTokenState);
 
   const onChangeComment = (event: any) => {
     setComment(event.target.value);
   };
 
   const onClickCommentWrite = async () => {
-    try {
-      await createComment({
-        variables: {
-          createCommentInput: {
-            content: comment,
-            image: fileUrls,
-            video: videoUrls,
-          },
-          boardId: router.query.boardId,
-        },
-        refetchQueries: [
-          {
-            query: FETCH_COMMENTS,
-            variables: {
-              boardId: router.query.boardId,
+    if (isToken) {
+      try {
+        await createComment({
+          variables: {
+            createCommentInput: {
+              content: comment,
+              image: fileUrls,
+              video: videoUrls,
             },
+            boardId: router.query.boardId,
           },
-        ],
-      });
+          refetchQueries: [
+            {
+              query: FETCH_COMMENTS,
+              variables: {
+                boardId: router.query.boardId,
+              },
+            },
+          ],
+        });
 
-      setComment('');
-      setFileUrls('');
-      setVideoUrls('');
-    } catch (error) {
-      alert(error);
+        setComment('');
+        setFileUrls('');
+        setVideoUrls('');
+      } catch (error) {
+        alert(error);
+      }
+    } else {
+      alert('Please Log in');
     }
   };
 
