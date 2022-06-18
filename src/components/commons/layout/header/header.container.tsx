@@ -26,6 +26,7 @@ export default function HeaderContainer() {
 
   useEffect(() => {
     setUserInfo(data?.fetchUser);
+    // 현재 선택된 페이지에 맞는 헤더 메뉴 활성화를 위한 코드
     setCurrentPage({
       garden: false,
       community: false,
@@ -36,41 +37,13 @@ export default function HeaderContainer() {
     });
   }, [data, router]);
 
-  const onClickLogo = () => {
-    router.push('/garden');
-  };
-
-  const onClickChat = () => {
-    router.push('/chat');
-  };
-
-  const onClickGarden = () => {
-    router.push('/garden');
-  };
-
-  const onClickCommunity = () => {
-    router.push('/community');
-  };
-
-  const onClickSignIn = () => {
-    router.push('/signin');
-  };
-
-  const onClickSignUp = () => {
-    router.push('/signup');
-  };
-
-  const onClickCharge = () => {
-    if (!isToken) {
-      alert('Please Login');
-      router.push('/signin');
-    } else router.push('/charge');
+  const onClickRoute = (event: { currentTarget: { id: any } }) => {
+    router.push(`/${event.currentTarget.id}`);
   };
 
   const onClickLogOut = async () => {
     try {
       await userLogOut();
-      // handleClose();
       setIsToken('');
       router.push('/garden');
     } catch (error) {
@@ -90,18 +63,12 @@ export default function HeaderContainer() {
   return (
     <LayoutHeaderUI
       isHiddenHeader={isHiddenHeader}
-      onClickLogo={onClickLogo}
-      onClickGarden={onClickGarden}
-      onClickCommunity={onClickCommunity}
-      onClickChat={onClickChat}
-      onClickCharge={onClickCharge}
       onClickMoveMypage={onClickMoveMypage}
       isToken={isToken}
       data={data}
       onClickLogOut={onClickLogOut}
-      onClickSignUp={onClickSignUp}
-      onClickSignIn={onClickSignIn}
       currentPage={currentPage}
+      onClickRoute={onClickRoute}
     />
   );
 }

@@ -42,8 +42,9 @@ export const WrapperLogo = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
-
+  :hover {
+    cursor: pointer;
+  }
   @media (max-width: 767px) {
     width: 100%;
     justify-content: flex-start;
@@ -94,6 +95,11 @@ export const BtnHeader = styled.button`
   font-size: 14px;
   line-height: 21px;
   text-align: center;
+  :hover {
+    color: #ffb950;
+    cursor: pointer;
+    border-bottom: 2px solid #ffb950;
+  }
   color: ${(props: IHeaderStyle) =>
     props.currentPage ? '#ffb950' : '#ffffff'};
 
@@ -101,12 +107,6 @@ export const BtnHeader = styled.button`
     props.currentPage ? '2px solid #ffb950' : 'none'};
 
   padding: 0px 20px;
-
-  :hover {
-    color: #ffb950;
-    cursor: pointer;
-    border-bottom: 2px solid #ffb950;
-  }
 
   @media (max-width: 767px) {
     padding: 3% 0%;
