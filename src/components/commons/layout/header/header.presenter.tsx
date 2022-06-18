@@ -6,35 +6,35 @@ export default function LayoutHeaderUI(props: IHeaderUI) {
   return (
     <Header.Wrapper isHidden={props.isHiddenHeader}>
       <Header.WrapperHeader>
-        <Header.WrapperLogo id={'garden'} onClick={props.onClickLogo}>
+        <Header.WrapperLogo id={'garden'} onClick={props.onClickRoute}>
           <Header.PLogoLang>Lang</Header.PLogoLang>
           <Header.PLogoB>B</Header.PLogoB>
         </Header.WrapperLogo>
         <Header.WrapperHeaderMenu>
           <Header.BtnHeader
             id={'garden'}
-            onClick={props.onClickGarden}
+            onClick={props.onClickRoute}
             currentPage={props.currentPage.garden}
           >
             Garden
           </Header.BtnHeader>
           <Header.BtnHeader
             id={'community'}
-            onClick={props.onClickCommunity}
+            onClick={props.onClickRoute}
             currentPage={props.currentPage.community}
           >
             Community
           </Header.BtnHeader>
           <Header.BtnHeader
             id={'chat'}
-            onClick={props.onClickChat}
+            onClick={props.onClickRoute}
             currentPage={props.currentPage.chat}
           >
             Chat
           </Header.BtnHeader>
           <Header.BtnHeader
             id={'charge'}
-            onClick={props.onClickCharge}
+            onClick={props.onClickRoute}
             currentPage={props.currentPage.charge}
           >
             Charge
@@ -62,10 +62,10 @@ export default function LayoutHeaderUI(props: IHeaderUI) {
             </>
           ) : (
             <>
-              <Header.SpanLogin onClick={props.onClickSignUp}>
+              <Header.SpanLogin id={'signup'} onClick={props.onClickRoute}>
                 SignUp
               </Header.SpanLogin>
-              <Header.SpanLogin onClick={props.onClickSignIn}>
+              <Header.SpanLogin id={'signin'} onClick={props.onClickRoute}>
                 Login
               </Header.SpanLogin>
             </>
