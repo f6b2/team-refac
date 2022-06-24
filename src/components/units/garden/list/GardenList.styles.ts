@@ -1,7 +1,13 @@
-import styled from "@emotion/styled";
-import { BsHeartFill, BsHeart } from "react-icons/bs";
-import { IoChatbubbleOutline } from "react-icons/io5";
-import { BsSearch } from "react-icons/bs";
+import styled from '@emotion/styled';
+import { BsHeartFill, BsHeart } from 'react-icons/bs';
+import { IoChatbubbleOutline } from 'react-icons/io5';
+import { BsSearch } from 'react-icons/bs';
+
+export const MotherDiv = styled.div`
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+`;
 
 export const TmpDiv = styled.div`
   width: 100%;
@@ -31,6 +37,9 @@ export const WrapperLeft = styled.div`
   padding: 98px 47px 0px 0px;
   position: sticky;
   top: 60px;
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -39,7 +48,13 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: white;
-  padding-top: 45px;
+  // 검색창 고정
+  @media (max-width: 767px) {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 60px;
+  }
 `;
 export const WrapperRight = styled.div`
   width: 236px;
@@ -52,6 +67,15 @@ export const WrapperRight = styled.div`
   top: 60px;
   margin-left: 50px;
   padding: 98px 0px 0px 0px;
+  @media (max-width: 767px) {
+    display: none;
+  }
+`;
+
+export const ListWrapper = styled.div`
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 `;
 
 export const InputSearchBar = styled.input`
@@ -67,6 +91,9 @@ export const InputSearchBar = styled.input`
   :focus {
     outline: none;
   }
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 `;
 
 export const GardenListBox = styled.main`
@@ -76,12 +103,19 @@ export const GardenListBox = styled.main`
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
   margin-bottom: 17px;
+  @media (max-width: 767px) {
+    width: 100%;
+    /* display: none; */
+  }
 `;
 
 export const WriterInfoBox = styled.section`
   display: flex;
   flex-direction: row;
   align-items: center;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 `;
 
 export const WriterProfile = styled.img`
@@ -226,10 +260,27 @@ export const SpanCommentCount = styled.span`
 `;
 
 export const WrapperSearch = styled.div`
-  width: 100%;
+  width: 540px;
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
+  // 검색창 고정시키기
+  padding-top: 100px;
+  padding-left: 8px;
+  margin-left: 10px;
+  position: fixed;
+  z-index: 5;
+  background-color: white;
+  @media (max-width: 767px) {
+    width: 105%;
+    padding-right: 10px;
+    padding-left: 17px;
+    padding-top: 20px;
+    position: fixed;
+    z-index: 5;
+    background-color: white;
+  }
 `;
 
 export const IconSearch = styled(BsSearch)`

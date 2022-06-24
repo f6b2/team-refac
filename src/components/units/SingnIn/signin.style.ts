@@ -20,11 +20,13 @@ export const SignUpWrapperDiv = styled.div`
   padding: 50px 46px 61px 44px;
   background-color: #fff;
   box-shadow: 30px 30px 10px rgba(0, 0, 0, 0.25);
-  border-radius: 50px 0px;
+  border-radius: 25px;
+  border: 1px solid #dbdbdb;
 
   @media (max-width: 767px) {
     width: 100%;
     padding: 10% 10%;
+    box-shadow: none;
   }
 `;
 

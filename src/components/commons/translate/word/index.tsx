@@ -30,7 +30,7 @@ export default function TranslateWord(props: any) {
   return (
     <Wrapper>
       <Translator
-        googleApiKey={process.env.REACT_APP_GOOGLE_TRANSLATOR_API_KEY}
+        googleApiKey={process.env.REACT_APP_GOOGLE_API_KEY}
         from='en'
         to={getLangCode(userInfo?.myLang)}
       >

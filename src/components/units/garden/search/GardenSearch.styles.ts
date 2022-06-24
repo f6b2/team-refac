@@ -1,7 +1,7 @@
-import styled from "@emotion/styled";
-import { BsHeartFill, BsHeart } from "react-icons/bs";
-import { IoChatbubbleOutline } from "react-icons/io5";
-import { BsSearch } from "react-icons/bs";
+import styled from '@emotion/styled';
+import { BsHeartFill, BsHeart } from 'react-icons/bs';
+import { IoChatbubbleOutline } from 'react-icons/io5';
+import { BsSearch } from 'react-icons/bs';
 
 export const TmpDiv = styled.div`
   width: 100%;
@@ -11,6 +11,14 @@ export const TmpDiv = styled.div`
 export const DivTmp = styled.div`
   width: auto;
   height: auto; ;
+`;
+
+export const MotherDiv = styled.div`
+  padding-top: 150px;
+  width: 100%;
+  @media (max-width: 767px) {
+    padding-top: 70px;
+  }
 `;
 
 export const GardenWrapper = styled.div`
@@ -31,6 +39,9 @@ export const WrapperLeft = styled.div`
   padding: 98px 47px 0px 0px;
   position: sticky;
   top: 60px;
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -39,6 +50,9 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: white;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 `;
 export const WrapperRight = styled.div`
   width: 236px;
@@ -51,6 +65,9 @@ export const WrapperRight = styled.div`
   top: 60px;
   margin-left: 50px;
   padding: 98px 0px 0px 0px;
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 export const InputSearchBar = styled.input`
@@ -60,12 +77,15 @@ export const InputSearchBar = styled.input`
   margin-bottom: 20px;
   color: #909090;
   padding: 8px 20px;
-
   background: rgba(219, 219, 219, 0.55);
   border-radius: 25px;
   :focus {
     outline: none;
   }
+`;
+
+export const ListWrapper = styled.div`
+  width: 100%;
 `;
 
 export const GardenListBox = styled.main`
@@ -75,6 +95,9 @@ export const GardenListBox = styled.main`
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
   margin-bottom: 17px;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 `;
 
 export const WriterInfoBox = styled.section`

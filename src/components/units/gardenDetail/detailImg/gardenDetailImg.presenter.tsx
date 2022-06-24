@@ -5,52 +5,68 @@ import Slider from 'react-slick';
 import { Image } from 'antd';
 import 'antd/dist/antd.css';
 
-const SliderChild = styled.div`
+const Wrapper = styled.div`
   width: 430px;
   height: 500px;
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 350px;
+  }
 `;
 
 const SliderGarden = styled(Slider)`
   width: 430px;
   height: 500px;
-  .slick-dots {
-    .slick-active {
-      button::before {
-        color: #ff0000;
-      }
-    }
-    button::before {
-      color: #ffffff;
-    }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 350px;
+  }
+`;
+
+const SliderChild = styled.div`
+  width: 430px;
+  height: 500px;
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 350px;
   }
 `;
 
 const Image1 = styled(Image)`
+  width: 430px;
+  height: 500px;
   object-fit: cover;
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+  }
 `;
 
 const Video = styled.video`
   width: 430px;
   height: 500px;
   object-fit: cover;
-`;
-
-const Wrapper = styled.div`
-  width: 430px;
-  height: 500px;
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
 `;
 
 export default function GardenDetailImgUI(props: any) {
   const settings: any = {
-    dots: false,
-    prevArrow: false,
-    nextArrow: false,
-
+    dots: true,
+    arrows: false,
     lazyLoad: false,
     infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    appendDots: (dots: boolean) => (
+      <ul style={{ marginBottom: '-10px' }}> {dots} </ul>
+    ),
   };
 
   return (
@@ -68,14 +84,14 @@ export default function GardenDetailImgUI(props: any) {
             <div key={index}>
               {props.data?.fetchBoardImage.length > 0 && (
                 <SliderChild>
-                  <Image1 width={430} height={500} src={el.image} />
+                  <Image1 src={el.image} />
                 </SliderChild>
               )}
             </div>
           ))}
         </SliderGarden>
       ) : (
-        <Image1 width={430} height={500} src='/image/default3.jpg' />
+        <Image1 src='/image/default3.jpg' />
       )}
     </Wrapper>
   );

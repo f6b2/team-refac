@@ -1,13 +1,16 @@
-import styled from "@emotion/styled";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
-import { Image } from "antd";
-import "antd/dist/antd.css";
+import styled from '@emotion/styled';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Slider from 'react-slick';
+import { Image } from 'antd';
+import 'antd/dist/antd.css';
 
 const SliderChild = styled.div`
   width: 450px;
   height: 284px;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 `;
 
 const SliderGarden = styled(Slider)`
@@ -15,26 +18,29 @@ const SliderGarden = styled(Slider)`
   height: 284px;
   margin-top: 25px;
   margin-bottom: 10px;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 
   .slick-prev:before,
   .slick-next:before {
-    font-family: "slick";
+    font-family: 'slick';
     font-size: 40px;
     color: black;
   }
 
   .slick-prev:before {
-    content: "<";
+    content: '<';
   }
-  [dir="rtl"] .slick-prev:before {
-    content: ">";
+  [dir='rtl'] .slick-prev:before {
+    content: '>';
   }
 
   .slick-next:before {
-    content: ">";
+    content: '>';
   }
-  [dir="rtl"] .slick-next:before {
-    content: "<";
+  [dir='rtl'] .slick-next:before {
+    content: '<';
   }
 
   .slick-prev {
@@ -60,6 +66,9 @@ const Image1 = styled.img`
   height: 284px;
   object-fit: cover;
   border-radius: 10px;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 `;
 
 const Video = styled.video`
@@ -67,10 +76,17 @@ const Video = styled.video`
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 `;
 
 const Wrapper = styled.div`
   margin-bottom: 10px;
+  @media (max-width: 767px) {
+    /* display: none; */
+    width: 100%;
+  }
 `;
 
 export default function GardenImgUI(props: any) {
@@ -86,14 +102,19 @@ export default function GardenImgUI(props: any) {
 
   return (
     <Wrapper>
-      {props.video !== "" || props.data?.fetchBoardImage.length > 0 ? (
+      {props.video !== '' || props.data?.fetchBoardImage.length > 0 ? (
         <SliderGarden {...settings}>
-          {props.video !== "" ? (
+          {props.video !== '' ? (
             <SliderChild>
-              <Video src={props.video} controls />
+              <Video
+                src={`${props.video}#t=0.001`}
+                controls={true}
+                playsInline={true}
+                preload='metadata'
+              />
             </SliderChild>
           ) : (
-            ""
+            ''
           )}
           {props.data?.fetchBoardImage.map((el: any, index: any) => (
             <div key={index}>
@@ -106,7 +127,7 @@ export default function GardenImgUI(props: any) {
           ))}
         </SliderGarden>
       ) : (
-        ""
+        ''
       )}
     </Wrapper>
   );

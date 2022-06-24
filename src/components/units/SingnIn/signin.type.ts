@@ -1,9 +1,10 @@
 import { FormEvent } from 'react';
+import { FieldValues, FormState, UseFormRegister } from 'react-hook-form';
 
 export interface ISingninPresenter {
   onClickSignin: (event: FormEvent<HTMLFormElement>) => void;
   onClickMoveSignUp: () => void;
-  register: any;
+  register: UseFormRegister<FieldValues>;
   handleSubmit: Function;
-  formState: any;
+  formState: FormState<FieldValues>;
 }

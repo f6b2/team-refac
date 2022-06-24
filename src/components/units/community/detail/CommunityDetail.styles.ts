@@ -1,19 +1,22 @@
-import styled from "@emotion/styled";
-import { GiHearts } from "react-icons/gi";
-import { RiFileEditLine, RiDeleteBinLine } from "react-icons/ri";
-import { BsListUl } from "react-icons/bs";
-import { ICommunityDetailUIProps } from "./CommunityDetail.types";
+import styled from '@emotion/styled';
+import { GiHearts } from 'react-icons/gi';
+import { RiFileEditLine, RiDeleteBinLine } from 'react-icons/ri';
+import { BsListUl } from 'react-icons/bs';
 
 export const OutWrapper = styled.div`
   background-color: white;
   display: flex;
   justify-content: center;
-  height: 730px;
+  height: 750px;
 `;
 
 export const Wrapper = styled.div`
   margin-top: 120px;
   width: 700px;
+  @media all and (max-width: 767px) {
+    margin-top: 30px;
+    width: 90%;
+  }
 `;
 
 export const Header = styled.div`
@@ -60,13 +63,13 @@ export const Date = styled.div`
 export const Body = styled.div`
   display: flex;
   justify-content: space-between;
-`;
 
-export const InnerWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  /* justify-content: space-between; */
-  align-items: center;
+  @media all and (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
 `;
 
 export const Img = styled.img`
@@ -76,6 +79,11 @@ export const Img = styled.img`
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   object-fit: cover;
+  @media all and (max-width: 767px) {
+    width: 90%;
+    height: 200px;
+    margin-bottom: 30px;
+  }
 `;
 
 export const LikesWrapper = styled.div`
@@ -103,6 +111,12 @@ export const Detail = styled.div`
   border-radius: 10px;
   width: 350px;
   height: 350px;
+
+  @media all and (max-width: 767px) {
+    width: 90%;
+    height: 200px;
+    padding: 15px;
+  }
 `;
 
 export const Title = styled.div`
@@ -115,7 +129,8 @@ export const Title = styled.div`
 
 export const ContentsBox = styled.div`
   width: 100%;
-  height: 230px;
+  /* height: 230px; */
+  height: 90%;
   overflow: auto;
 `;
 
@@ -123,6 +138,18 @@ export const Contents = styled.div`
   font-size: 13px;
   color: #ffffff;
   margin-bottom: 5px;
+`;
+
+export const InnerWrapper = styled.div`
+  display: flex;
+  margin: 0px 130px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  @media all and (max-width: 767px) {
+    margin: 0px 80px;
+    justify-content: space-evenly;
+  }
 `;
 
 export const BtnWrapper = styled.div`

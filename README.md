@@ -161,3 +161,8 @@ export default function Home() {
 getLangCode('한국어');
 // result : ko
 ```
+
+## .env 그리고 API 키(시크릿 키값) 사용법
+
+- 노출되면 안되는 키값(구글 등등 api키값)은 .env 파일에 작성
+- 키값이 필요한 곳에서 process.env.REACT_APP_GOOGLE_API_KEY 로 불러와서 사용하면 됨

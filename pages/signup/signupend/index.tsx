@@ -9,12 +9,14 @@ export const WrapperCol = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: auto;
+  height: 100%;
 `;
 
 export const Welcome = styled.div`
-  width: 800px;
-  height: 500px;
+  max-width: 800px;
+  max-height: auto;
+  width: 80%;
+  height: 50%;
 `;
 
 export const ButtonMovetoSignin = styled.button`
@@ -54,7 +56,7 @@ export default function SignUpComplete() {
       <Welcome
         // @ts-ignore
         ref={likecontainer}
-      ></Welcome>
+      />
       <ButtonMovetoSignin onClick={onClickSignin}>Sign In</ButtonMovetoSignin>
     </WrapperCol>
   );

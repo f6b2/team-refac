@@ -21,16 +21,17 @@ import {
   LikeOff,
   InfoWrapper,
   LikeNumber,
-} from "./GardenCommentList.styles";
-import styled from "@emotion/styled";
-import { MdModeEditOutline, MdOutlineClear } from "react-icons/md";
-import GardenCommentEdit from "../edit/GardenCommentEdit.container";
-import { Image } from "antd";
-import "antd/dist/antd.css";
-import * as timeago from "timeago.js";
-import ko from "timeago.js/lib/lang/ko";
-import { v4 as uuidv4 } from "uuid";
-import { Tooltip } from "@mui/material";
+  MotherDiv,
+} from './GardenCommentList.styles';
+import styled from '@emotion/styled';
+import { MdModeEditOutline, MdOutlineClear } from 'react-icons/md';
+import GardenCommentEdit from '../edit/GardenCommentEdit.container';
+import { Image } from 'antd';
+import 'antd/dist/antd.css';
+import * as timeago from 'timeago.js';
+import ko from 'timeago.js/lib/lang/ko';
+import { v4 as uuidv4 } from 'uuid';
+import { Tooltip } from '@mui/material';
 
 const Image1 = styled(Image)`
   object-fit: cover;
@@ -38,9 +39,9 @@ const Image1 = styled(Image)`
 `;
 
 export default function GardenCommentListUI(props: any) {
-  timeago.register("ko", ko);
+  timeago.register('ko', ko);
   return (
-    <>
+    <MotherDiv>
       {props.comments?.fetchComments.map((el: any, index: any) => (
         <>
           <CommentListBox key={String(uuidv4())}>
@@ -49,24 +50,24 @@ export default function GardenCommentListUI(props: any) {
                 <Row1>
                   <InfoWrapper>
                     <ProfileWrapper>
-                      {el.writer.image.includes("http") ? (
+                      {el.writer.image.includes('http') ? (
                         <CommentProfile src={el.writer.image} />
                       ) : (
-                        <CommentProfile src={"/image/defaultuser.png"} />
+                        <CommentProfile src={'/image/defaultuser.png'} />
                       )}
                     </ProfileWrapper>
                     <CommentName>{el.writer.name}</CommentName>
-                    <CreatedAt datetime={el.createdAt} locale="ko"></CreatedAt>
+                    <CreatedAt datetime={el.createdAt} locale='ko'></CreatedAt>
                     <LikeNumber> {el.likes} like</LikeNumber>
                   </InfoWrapper>
                   {props.loginInfo?.name === el.writer.name && (
                     <OtherBtns>
-                      <Tooltip title="Edit Comment">
+                      <Tooltip title='Edit Comment'>
                         <EditBtn onClick={props.commentEditBtn(index)}>
                           <MdModeEditOutline size={14} />
                         </EditBtn>
                       </Tooltip>
-                      <Tooltip title="Delete Comment">
+                      <Tooltip title='Delete Comment'>
                         <DeleteBtn
                           onClick={props.onClickDeleteComment}
                           id={el.id}
@@ -96,7 +97,7 @@ export default function GardenCommentListUI(props: any) {
                         </Like>
                       )
                     ) : (
-                      ""
+                      ''
                     )
                   )
                 ) : (
@@ -106,8 +107,8 @@ export default function GardenCommentListUI(props: any) {
                 )}
               </ContentWrapper>
               <MediaBox>
-                {el.image !== "" && <Image1 src={el.image} width={300} />}
-                {el.video !== "" && <CommentVideo src={el.video} controls />}
+                {el.image !== '' && <Image1 src={el.image} width={300} />}
+                {el.video !== '' && <CommentVideo src={el.video} controls />}
               </MediaBox>
             </CommentContentsBox>
 
@@ -123,6 +124,6 @@ export default function GardenCommentListUI(props: any) {
           )}
         </>
       ))}
-    </>
+    </MotherDiv>
   );
 }

@@ -37,7 +37,7 @@ export default function TranslateCommunity(props: any) {
   return (
     <Wrapper>
       <Translator
-        googleApiKey={process.env.REACT_APP_GOOGLE_TRANSLATOR_API_KEY}
+        googleApiKey={process.env.REACT_APP_GOOGLE_API_KEY}
         from={getLangCode(commuData?.fetchCommunityBoard.writer.myLang)} // 작성자 mylang
         to={getLangCode(userInfo?.myLang)} // 로그인유저 mylang
       >

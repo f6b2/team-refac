@@ -8,6 +8,8 @@ import {
 import styled from '@emotion/styled';
 import { UPLOAD_FILE } from '../queries';
 import { ImFileVideo } from 'react-icons/im';
+import { accessTokenState } from '../../../commons/store';
+import { useRecoilState } from 'recoil';
 
 export const UploadVideoWrapper = styled.div`
   width: auto;
@@ -31,6 +33,9 @@ export const RecordSaveButton = styled.button`
   color: white;
   margin: 0px;
   cursor: pointer;
+  :disabled {
+    background-color: #bdbdbd;
+  }
 `;
 
 export const GardenVideoUpload = styled(ImFileVideo)`
@@ -39,13 +44,16 @@ export const GardenVideoUpload = styled(ImFileVideo)`
   :hover {
     cursor: pointer;
   }
+  @media (max-width: 767px) {
+    font-size: 27px;
+  }
 `;
 
 export default function VideoUpload(props: {
   onChangeVideoUrls?: (fileUrl: string) => void;
   videoUrls?: Array<string>;
   type?: string;
-  recordUrls?: Array<string>;
+  recordUrls?: any;
   handleClose?: () => void;
 }) {
   const fileRef = useRef<HTMLInputElement>(null);
@@ -55,6 +63,7 @@ export default function VideoUpload(props: {
     Pick<IMutation, 'uploadFile'>,
     IMutationUploadFileArgs
   >(UPLOAD_FILE);
+  const [isToken] = useRecoilState(accessTokenState);
 
   const onChangeFile = async (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -76,7 +85,11 @@ export default function VideoUpload(props: {
   };
 
   const onClickVideo = () => {
-    fileRef.current?.click();
+    if (isToken) {
+      fileRef.current?.click();
+    } else {
+      alert('Please Log in');
+    }
   };
 
   // record
@@ -115,7 +128,10 @@ export default function VideoUpload(props: {
         />
       </UploadVideoWrapper>
       {props.type === 'record' && (
-        <RecordSaveButton onClick={onClickRecordUpload}>
+        <RecordSaveButton
+          onClick={onClickRecordUpload}
+          disabled={!props?.recordUrls?.size}
+        >
           저장하기
         </RecordSaveButton>
       )}

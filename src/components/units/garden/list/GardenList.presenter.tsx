@@ -2,10 +2,8 @@ import GardenCommentList from '../comment/list/GardenCommentList.container';
 import GardenCommentWrite from '../comment/write/GardenCommentWrite.container';
 import {
   CommentCount,
-  CommentListBtn,
   Contents,
   ContentsBox,
-  ContentsTranslate,
   ContentsTranslateBox,
   CreatedAt,
   GardenListBox,
@@ -30,13 +28,10 @@ import {
   IconSearch,
   WrapperIconRow,
   DivTmp,
+  MotherDiv,
+  ListWrapper,
 } from './GardenList.styles';
-import {
-  MdQuestionAnswer,
-  MdThumbUp,
-  MdBookmarkBorder,
-  MdBookmark,
-} from 'react-icons/md';
+import { MdBookmarkBorder, MdBookmark } from 'react-icons/md';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { motion } from 'framer-motion';
 import GardenBestList from '../bestList/GardenBestList.container';
@@ -50,18 +45,19 @@ import InfiniteScroll from 'react-infinite-scroller';
 import GardenImg from '../gardenImg/gardenImg.container';
 import TranslateGarden from '../../../commons/translate/garden';
 import GardenSearch from '../search/GardenSearch.container';
-import _ from 'lodash';
 import { v4 as uuidv4 } from 'uuid';
+import GardenWriteBtn from './writebutton/writebutton';
 
 export default function GardenListUI(props: any) {
   return (
-    <>
+    <MotherDiv>
       <GardenWrapper>
         <WrapperLeft>
           <GardenWriteContainer />
           <DailyWordContainer />
         </WrapperLeft>
         <Wrapper>
+          <GardenWriteBtn />
           <WrapperSearch>
             <InputSearchBar onChange={props.onChangeSearchKeyword} />
             <IconSearch />
@@ -75,9 +71,10 @@ export default function GardenListUI(props: any) {
                 pageStart={0}
                 loadMore={props.loadFunc}
                 hasMore={true}
+                style={{ width: '100%' }}
               >
                 {props.data?.fetchBoards.map((el: any, index: any) => (
-                  <div key={String(uuidv4())}>
+                  <ListWrapper key={String(uuidv4())}>
                     {props.loginUserInfo?.newLang === el.writer.myLang ? (
                       <GardenListBox>
                         <WriterInfoBox>
@@ -244,16 +241,16 @@ export default function GardenListUI(props: any) {
                                 </Like>
                               )}
 
-                              <MdKeyboardArrowDown
+                              {/* <MdKeyboardArrowDown
                                 onClick={props.onClickCommentListBtn(index)}
                                 id={el.id}
                                 size={20}
                                 style={{
-                                  marginLeft: '320px',
+                                  marginLeft: '177px',
                                   marginBottom: '5px',
                                   cursor: 'pointer',
                                 }}
-                              />
+                              /> */}
                             </LikeAndCommentCount>
                           </LikeAndCommentCountBox>
                         </ContentsBox>
@@ -431,7 +428,7 @@ export default function GardenListUI(props: any) {
                                 </Like>
                               )}
 
-                              <MdKeyboardArrowDown
+                              {/* <MdKeyboardArrowDown
                                 onClick={props.onClickCommentListBtn(index)}
                                 id={el.id}
                                 size={20}
@@ -440,7 +437,7 @@ export default function GardenListUI(props: any) {
                                   marginBottom: '5px',
                                   cursor: 'pointer',
                                 }}
-                              />
+                              /> */}
                             </LikeAndCommentCount>
                           </LikeAndCommentCountBox>
                         </ContentsBox>
@@ -454,7 +451,7 @@ export default function GardenListUI(props: any) {
                     ) : (
                       ''
                     )}
-                  </div>
+                  </ListWrapper>
                 )) || <div></div>}
               </InfiniteScroll>
             </>
@@ -464,6 +461,6 @@ export default function GardenListUI(props: any) {
           <ArchiveContainer />
         </WrapperRight>
       </GardenWrapper>
-    </>
+    </MotherDiv>
   );
 }

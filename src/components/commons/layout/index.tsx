@@ -2,8 +2,14 @@
 import styled from '@emotion/styled';
 import { ReactNode } from 'react';
 import { useRouter } from 'next/router';
-import LayoutHeader from './header';
+// import LayoutHeader from './header';
 import Home from '../../../../pages';
+import BottomNav from './bottomnav';
+import HeaderContainer from './header/header.container';
+
+interface ILayoutStyleProps {
+  handlepadding: boolean;
+}
 
 const WrapperLayout = styled.div`
   width: 100%;
@@ -32,6 +38,9 @@ const BodyWrapper = styled.div`
   padding-top: 60px;
   padding-bottom: 100px;
   background-color: white;
+  @media (max-width: 767px) {
+    padding-top: ${(props: ILayoutStyleProps) => props.handlepadding && '0px'};
+  }
 `;
 
 interface ILayoutProps {
@@ -41,21 +50,24 @@ interface ILayoutProps {
 export default function Layout(props: ILayoutProps) {
   const router = useRouter();
 
-  const BODY_YELLOW = ['/signin', '/signup', '/profile/[id]'];
-
+  const BODY_YELLOW = [''];
   const HIDDEN_HEADER = ['/'];
+  const MOBIL_CHAT = ['/chat/[chatInfo]'];
 
   const isBodyColor = BODY_YELLOW.includes(router.pathname);
   const isHiddenHeader = HIDDEN_HEADER.includes(router.pathname);
+  const isChatRoom = MOBIL_CHAT.includes(router.pathname);
 
   return (
     <WrapperLayout>
       {isHiddenHeader && <Home />}
       {!isHiddenHeader && (
         <>
-          <LayoutHeader />
+          <HeaderContainer />
+          <BottomNav />
           <BodyWrapper
             style={{ backgroundColor: `${isBodyColor ? '#ffb950' : 'white'}` }}
+            handlepadding={isChatRoom}
           >
             <Body>{props.children}</Body>
           </BodyWrapper>

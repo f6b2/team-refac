@@ -1,4 +1,3 @@
-import { useQuery } from '@apollo/client';
 import styled from '@emotion/styled';
 import { useState } from 'react';
 import { Translate, Translator } from 'react-auto-translate';
@@ -32,7 +31,7 @@ export default function TranslateGarden(props: any) {
   return (
     <Wrapper>
       <Translator
-        googleApiKey={process.env.REACT_APP_GOOGLE_TRANSLATOR_API_KEY}
+        googleApiKey={process.env.REACT_APP_GOOGLE_API_KEY}
         from={getLangCode(props.myLang)} // 작성자 mylang
         to={getLangCode(userInfo?.myLang)} // 로그인유저 mylang
       >

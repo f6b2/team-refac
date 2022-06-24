@@ -1,12 +1,15 @@
-import styled from "@emotion/styled";
-import { RiFileEditLine, RiDeleteBinLine } from "react-icons/ri";
-import { BsHeartFill, BsHeart } from "react-icons/bs";
-import { IoChatbubbleOutline } from "react-icons/io5";
+import styled from '@emotion/styled';
+import { RiFileEditLine, RiDeleteBinLine } from 'react-icons/ri';
+import { BsHeartFill, BsHeart } from 'react-icons/bs';
+import { IoChatbubbleOutline } from 'react-icons/io5';
 
 export const Outer = styled.div`
-  width: 100vw;
-  height: 100%;
-  margin-top: 72px;
+  margin-top: 100px;
+  width: 860px;
+  @media all and (max-width: 768px) {
+    margin-top: 50px;
+    width: 100%;
+  }
 `;
 
 export const GardenWrapper = styled.div`
@@ -14,21 +17,19 @@ export const GardenWrapper = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100%;
 `;
 
 export const Wrapper = styled.div`
   width: 860px;
   height: 500px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
   border: 1px solid #dbdbdb;
   box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
+  @media all and (max-width: 768px) {
+    width: 80%;
+    height: auto;
+    padding: 0px 20px;
+  }
 `;
 
 export const GardenListBox = styled.main`
@@ -36,22 +37,36 @@ export const GardenListBox = styled.main`
   justify-content: space-between;
   width: 100%;
   padding-right: 29px;
+  @media all and (max-width: 768px) {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 0px;
+    width: 100%;
+  }
 `;
-
-export const LeftWrapper = styled.div``;
 
 export const ContentsImg = styled.div`
   width: 430px;
   height: 500px;
   object-fit: cover;
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+  }
 `;
 
 export const RightWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   width: 350px;
+  height: auto;
   padding: 20px 0px;
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 export const WriterInfoBox = styled.div`
@@ -59,6 +74,9 @@ export const WriterInfoBox = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 768px) {
+    padding-right: 5px;
+  }
 `;
 
 export const WriterInfo = styled.div`
@@ -73,9 +91,6 @@ export const WriterProfile = styled.img`
   width: 25px;
   height: 25px;
   border-radius: 50%;
-
-  /* 완성 후 삭제 */
-  background-color: white;
 `;
 
 export const WriterName = styled.div`
@@ -93,6 +108,10 @@ export const ContentsBox = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 768px) {
+    width: auto;
+    height: 70%;
+  }
 `;
 
 export const Contents = styled.div`
@@ -132,7 +151,6 @@ export const Like = styled.button`
   font-weight: 400;
   font-size: 12px;
   margin-right: 10px;
-  /* padding-right: 3px; */
 `;
 
 export const CommentCount = styled.div`
@@ -185,6 +203,11 @@ export const CommentBox = styled.div`
   width: 100%;
   height: 250px;
   overflow: auto;
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
 `;
 
 export const LikeOn = styled(BsHeartFill)`

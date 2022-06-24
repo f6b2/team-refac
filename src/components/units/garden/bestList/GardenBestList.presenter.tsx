@@ -1,13 +1,14 @@
-import { GardenBestListBox } from "./GardenBestList.styles";
-import { motion } from "framer-motion";
-import GardenBestBox from "./GardenBestBox";
-import { v4 as uuidv4 } from "uuid";
+import { GardenBestListBox } from './GardenBestList.styles';
+import { motion } from 'framer-motion';
+import GardenBestBox from './GardenBestBox';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function GardenBestListUI(props: any) {
   return (
     <GardenBestListBox>
       {props.data?.fetchBoards.map((el: any) => (
         <motion.div
+          style={{ width: '100%' }}
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.3 }}
           key={String(uuidv4())}

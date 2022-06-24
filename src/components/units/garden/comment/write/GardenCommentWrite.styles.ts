@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const CommentWriteBox = styled.main`
   width: 100%;
@@ -17,7 +17,7 @@ export const CommentWriteProfile = styled.img`
   background-color: white;
 `;
 
-export const CommentWriteInputBox = styled.article`
+export const CommentWriteInputBox = styled.div`
   width: 385px;
   height: 34px;
   display: flex;
@@ -38,10 +38,11 @@ export const CommentWriteInput = styled.input`
   padding-left: 9.5px;
 `;
 
-export const CommentWriteBtn = styled.section`
+export const CommentWriteBtn = styled.div`
   width: 130px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   margin-left: 8px;
 `;
 
@@ -51,6 +52,11 @@ export const SubmitBtn = styled.button`
   color: black;
   font-size: 25px;
   cursor: pointer;
+  @media (max-width: 767px) {
+    margin: 0px;
+    margin-right: 15px;
+    padding: 0px;
+  }
 `;
 
 export const ImgBtn = styled.button`
@@ -60,6 +66,11 @@ export const ImgBtn = styled.button`
   font-size: 25px;
   cursor: pointer;
   margin-left: 13px;
+  @media (max-width: 767px) {
+    margin: 0px;
+    margin-right: 15px;
+    padding: 0px;
+  }
 `;
 
 export const VideoBtn = styled.button`
@@ -69,6 +80,11 @@ export const VideoBtn = styled.button`
   font-size: 25px;
   cursor: pointer;
   margin-left: 13px;
+  @media (max-width: 767px) {
+    margin: 0px;
+    margin-right: 15px;
+    padding: 0px;
+  }
 `;
 
 export const ImageThumbnail = styled.img`

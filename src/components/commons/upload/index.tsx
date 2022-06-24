@@ -10,6 +10,9 @@ import * as S from '../../../components/units/community/write/CommunityWrite.sty
 import * as Edit from '../../units/userprofile/useredit/useredit.style';
 
 import { AiOutlineFileImage } from 'react-icons/ai';
+import { useAuth } from '../hooks/useAuth';
+import { accessTokenState } from '../../../commons/store';
+import { useRecoilState } from 'recoil';
 
 export const UploadImageWrapper = styled.div`
   width: auto;
@@ -31,6 +34,10 @@ export const GardenImageUpload = styled(AiOutlineFileImage)`
   :hover {
     cursor: pointer;
   }
+
+  @media (max-width: 767px) {
+    font-size: 30px;
+  }
 `;
 
 export default function ImageUpload(props: {
@@ -51,6 +58,7 @@ export default function ImageUpload(props: {
     Pick<IMutation, 'uploadFile'>,
     IMutationUploadFileArgs
   >(UPLOAD_FILE);
+  const [isToken] = useRecoilState(accessTokenState);
 
   const onChangeFile = async (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -68,7 +76,11 @@ export default function ImageUpload(props: {
   };
 
   const onClickImage = () => {
-    fileRef.current?.click();
+    if (isToken) {
+      fileRef.current?.click();
+    } else {
+      alert('Please Log in');
+    }
   };
 
   return (

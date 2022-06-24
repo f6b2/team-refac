@@ -15,9 +15,10 @@ export const WrapperDiv = styled.div`
   margin-bottom: 20px;
   border: 1px solid #dbdbdb;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
-  border-radius: 0px 50px;
+  border-radius: 25px;
   @media (max-width: 767px) {
-    display: none;
+    width: 100%;
+    height: auto;
   }
 `;
 
@@ -146,6 +147,9 @@ export const GardenRecordUpload = styled(AiOutlineVideoCamera)`
   :hover {
     cursor: pointer;
   }
+  @media (max-width: 767px) {
+    font-size: 30px;
+  }
 `;
 
 export const MoveToLogin = styled.button`
@@ -157,5 +161,24 @@ export const MoveToLogin = styled.button`
   border-radius: 10px;
   :hover {
     cursor: pointer;
+  }
+`;
+
+export const ButtonFloat = styled.button`
+  display: none;
+  width: 60px;
+  height: 60px;
+  background-color: #ffb950;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  :hover {
+    cursor: pointer;
+  }
+  @media (max-width: 767px) {
+    display: flex;
+    position: absolute;
+    right: 0px;
+    bottom: -100px;
   }
 `;

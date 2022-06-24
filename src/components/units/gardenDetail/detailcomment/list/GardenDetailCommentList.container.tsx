@@ -1,7 +1,7 @@
 import { useMutation, useQuery } from '@apollo/client';
 import { useState } from 'react';
 import { useRecoilState } from 'recoil';
-import { userInfoState } from '../../../../../commons/store';
+import { accessTokenState, userInfoState } from '../../../../../commons/store';
 import {
   DELETE_COMMENT,
   FETCH_COMMENTS,
@@ -26,6 +26,7 @@ export default function GardenDetailCommentList(props: any) {
   });
   const [deleteComment] = useMutation(DELETE_COMMENT);
   const [loginInfo] = useRecoilState(userInfoState);
+  const [isToken] = useRecoilState(accessTokenState);
 
   const onClickDeleteComment = async (event: any) => {
     try {
@@ -59,28 +60,32 @@ export default function GardenDetailCommentList(props: any) {
   // 댓글 좋아요
   const [likeComment] = useMutation(LIKE_COMMENT);
   const onClickCommentLike = async (event: any) => {
-    try {
-      await likeComment({
-        variables: {
-          commentId: event.currentTarget.id,
-        },
-        refetchQueries: [
-          {
-            query: FETCH_COMMENTS,
-            variables: {
-              boardId: props.boardElId,
-            },
+    if (isToken) {
+      try {
+        await likeComment({
+          variables: {
+            commentId: event.currentTarget.id,
           },
-          {
-            query: FETCH_MYLIKED_COMMENT,
-            variables: {
-              userId: loginInfo?.id,
+          refetchQueries: [
+            {
+              query: FETCH_COMMENTS,
+              variables: {
+                boardId: props.boardElId,
+              },
             },
-          },
-        ],
-      });
-    } catch (error) {
-      alert(error);
+            {
+              query: FETCH_MYLIKED_COMMENT,
+              variables: {
+                userId: loginInfo?.id,
+              },
+            },
+          ],
+        });
+      } catch (error) {
+        alert(error);
+      }
+    } else {
+      alert('Please Log in');
     }
   };
 

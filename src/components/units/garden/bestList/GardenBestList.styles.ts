@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const GardenBestListBox = styled.div`
   width: 510px;
@@ -6,4 +6,10 @@ export const GardenBestListBox = styled.div`
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 17px;
+  margin-top: 160px;
+  @media (max-width: 767px) {
+    margin-top: 71px;
+    width: 100%;
+    padding-left: 2.5%;
+  }
 `;

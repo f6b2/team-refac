@@ -4,7 +4,6 @@ import { RecoilRoot } from 'recoil';
 import { globalStyles } from '../src/commons/styles/globalstyles';
 import ApolloConfig from '../src/components/commons/apollo';
 import Layout from '../src/components/commons/layout';
-// import '../styles/globals.css' 사용안함
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

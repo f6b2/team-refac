@@ -19,7 +19,7 @@ export default function UserProfileContainer() {
   const router = useRouter();
 
   useEffect(() => {
-    if (userInfo.id === router.query.id) setIsMy(true);
+    if (userInfo?.id === router.query.id) setIsMy(true);
     else setIsMy(false);
   }, []);
 

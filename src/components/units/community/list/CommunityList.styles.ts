@@ -1,53 +1,63 @@
-import styled from "@emotion/styled";
-import { GiHearts } from "react-icons/gi";
+import styled from '@emotion/styled';
+import { GiHearts } from 'react-icons/gi';
 
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: white;
-  /* padding-bottom: 40px; */
-  height: 605px;
+  width: 100%;
+  height: auto;
 `;
 
 export const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-top: 68px;
+  margin-top: 40px;
   margin-bottom: 55px;
-  width: 756px;
-  line-height: 1.2;
+  padding: 30px;
+  width: 100%;
+  @media (min-width: 768px) and (max-width: 1024px) {
+    width: 95%;
+    margin-bottom: 20px;
+  }
+  @media all and (max-width: 767px) {
+    width: 95%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 `;
 
 export const PageName = styled.div`
   font-size: 40px;
   font-weight: 600;
+  @media all and (max-width: 767px) {
+    font-size: 30px;
+    font-weight: 600;
+  }
 `;
 
 export const Button = styled.div`
   cursor: pointer;
-  width: 22px;
-  height: 22px;
+  padding: 5px 9px;
   background-color: white;
-  color: black;
+  color: #51261d;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
   text-align: center;
-  border: 2px solid black;
-  border-radius: 7px;
+  border: 2px solid #51261d;
+  border-radius: 10px;
   :hover {
     cursor: pointer;
-    width: 22px;
-    height: 22px;
-    background-color: white;
-    color: #ffb950;
+    padding: 5px 9px;
+    background-color: #51261d;
+    color: white;
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 600;
     text-align: center;
-    border: 2px solid #ffb950;
-    border-radius: 7px;
-    transform: scale(1.15);
+    border: 2px solid #51261d;
+    border-radius: 10px;
     transition: 0.4s;
   }
 `;
@@ -56,19 +66,25 @@ export const Body = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-
-  width: 705px;
+  width: 100%;
+  @media all and (max-width: 767px) {
+    width: 90%;
+  }
 `;
 
 export const ContentsWrapper = styled.div`
-  width: 130px;
-  margin-bottom: 20px;
+  padding: 10px;
+  margin-bottom: 30px;
   filter: drop-shadow(15px 15px 10px rgba(0, 0, 0, 0.25));
+  @media all and (max-width: 767px) {
+    margin-bottom: 40px;
+    filter: drop-shadow(8px 8px 5px rgba(0, 0, 0, 0.25));
+  }
 `;
 
 export const Img = styled.img`
-  width: 130px;
-  height: 160px;
+  width: 90%;
+  height: 150px;
   object-fit: cover;
   border: 2px solid none;
   border-radius: 10px;
@@ -84,9 +100,11 @@ export const InfoWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
   margin-top: 10px;
-  width: 120px;
+  width: 90%;
+  @media all and (max-width: 767px) {
+    width: 90%;
+  }
 `;
 
 export const Info = styled.div`
@@ -108,7 +126,7 @@ export const Title = styled.div`
 export const Writer = styled.div`
   font-size: 10px;
   text-shadow: 15px 15px 10px rgba(0, 0, 0, 0.25);
-`;
+`; 
 
 export const Date = styled.div`
   font-size: 10px;
@@ -122,6 +140,7 @@ export const LikesWrapper = styled.div`
   justify-content: flex-start;
   align-items: center;
 `;
+
 export const HeartsWrapper = styled.button`
   color: #ff5b5b;
   border: none;

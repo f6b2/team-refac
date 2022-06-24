@@ -9,6 +9,9 @@ export const WrapperCol = styled.div`
   width: 100%;
   height: auto;
   padding: 0px 80px;
+  @media (max-width: 767px) {
+    padding: 0px 10px;
+  }
 `;
 
 export const PName = styled.p`
