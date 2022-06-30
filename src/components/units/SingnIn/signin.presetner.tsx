@@ -13,6 +13,7 @@ export default function SignInUI(props: ISingninPresenter) {
               type='email'
               placeholder='Enter your email'
             />
+            {/* @ts-ignore */}
             <U.Warning>{props.formState.errors.email?.message}</U.Warning>
           </U.SignUpItemDiv>
           <U.SignUpItemDiv>
@@ -21,6 +22,7 @@ export default function SignInUI(props: ISingninPresenter) {
               type='password'
               placeholder='Enter your password'
             />
+            {/* @ts-ignore */}
             <U.Warning>{props.formState.errors?.password?.message}</U.Warning>
           </U.SignUpItemDiv>
           <U.WrapperRow>
@@ -28,6 +30,7 @@ export default function SignInUI(props: ISingninPresenter) {
           </U.WrapperRow>
 
           <U.SignUpItemDiv>
+            {/* @ts-ignore */}
             <U.SignUpItemBtn disabled={!props.formState.isValid}>
               Log in
             </U.SignUpItemBtn>
