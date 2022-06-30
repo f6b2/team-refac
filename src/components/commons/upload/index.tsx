@@ -10,7 +10,6 @@ import * as S from '../../../components/units/community/write/CommunityWrite.sty
 import * as Edit from '../../units/userprofile/useredit/useredit.style';
 
 import { AiOutlineFileImage } from 'react-icons/ai';
-import { useAuth } from '../hooks/useAuth';
 import { accessTokenState } from '../../../commons/store';
 import { useRecoilState } from 'recoil';
 
