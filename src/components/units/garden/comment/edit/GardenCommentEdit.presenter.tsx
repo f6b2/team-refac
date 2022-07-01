@@ -11,25 +11,28 @@ import {
   Video,
   VideoBtn,
   Wrapper,
-} from "./GardenCommentEdit.styles";
-import { MdForwardToInbox, MdPhoto, MdPhotoCameraFront } from "react-icons/md";
-import { BiSend } from "react-icons/bi";
-import ImageUpload from "../../../../commons/upload";
-import VideoUpload from "../../../../commons/videoupload";
+} from './GardenCommentEdit.styles';
+
+// 사용하지 않으면 삭제하는게 어떨까요?
+import { MdForwardToInbox, MdPhoto, MdPhotoCameraFront } from 'react-icons/md';
+
+import { BiSend } from 'react-icons/bi';
+import ImageUpload from '../../../../commons/upload';
+import VideoUpload from '../../../../commons/videoupload';
 
 export default function GardenCommentEditUI(props: any) {
   return (
     <Wrapper>
       <CommentWriteBox>
-        {props.loginInfo?.image.includes("http") ? (
+        {props.loginInfo?.image.includes('http') ? (
           <CommentWriteProfile src={props.loginInfo?.image} />
         ) : (
-          <CommentWriteProfile src="https://cdn.discordapp.com/attachments/974505238029533295/980389912345972736/defaultuser.png" />
+          <CommentWriteProfile src='https://cdn.discordapp.com/attachments/974505238029533295/980389912345972736/defaultuser.png' />
         )}
         <CommentWriteInputBox>
           <CommentWriteInput
-            placeholder="Edit Your Comment Here!"
-            type={"text"}
+            placeholder='Edit Your Comment Here!'
+            type={'text'}
             onChange={props.onChangeComment}
             defaultValue={props.commentEl?.content}
           />
@@ -47,32 +50,32 @@ export default function GardenCommentEditUI(props: any) {
               <ImageUpload
                 onChangeFileUrls={props.onChangeFileUrls}
                 fileUrls={props.fileUrls}
-                type={"comment"}
+                type={'comment'}
               />
             </ImgBtn>
             <VideoBtn>
               <VideoUpload
                 onChangeVideoUrls={props.onChangeVideoUrls}
                 videoUrls={props.videoUrls}
-                type={"comment"}
+                type={'comment'}
               />
             </VideoBtn>
           </CommentWriteBtn>
         </CommentWriteInputBox>
       </CommentWriteBox>
       <MediaWrapper>
-        {props.fileUrls === "" && props.commentEl.image.includes("http") ? (
+        {props.fileUrls === '' && props.commentEl.image.includes('http') ? (
           <Img src={props.commentEl.image} />
         ) : (
-          ""
+          ''
         )}
-        {props.videoUrls === "" && props.commentEl.video.includes("http") ? (
+        {props.videoUrls === '' && props.commentEl.video.includes('http') ? (
           <Video src={props.commentEl.video} controls />
         ) : (
-          ""
+          ''
         )}
-        {props.fileUrls !== "" && <Img src={props.fileUrls} />}
-        {props.videoUrls !== "" && <Video src={props.videoUrls} controls />}
+        {props.fileUrls !== '' && <Img src={props.fileUrls} />}
+        {props.videoUrls !== '' && <Video src={props.videoUrls} controls />}
       </MediaWrapper>
     </Wrapper>
   );
