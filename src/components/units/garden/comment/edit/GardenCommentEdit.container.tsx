@@ -1,31 +1,33 @@
-import { useMutation } from "@apollo/client";
-import { useState } from "react";
-import { useRecoilState } from "recoil";
-import { userInfoState } from "../../../../../commons/store";
+import { useMutation } from '@apollo/client';
+import { useState } from 'react';
+import { useRecoilState } from 'recoil';
+import { userInfoState } from '../../../../../commons/store';
 import {
   CREATE_COMMENT,
   FETCH_COMMENTS,
   UPDATE_COMMENT,
-} from "../../../../commons/queries";
-import GardenCommentWriteUI from "./GardenCommentEdit.presenter";
+} from '../../../../commons/queries';
+import GardenCommentWriteUI from './GardenCommentEdit.presenter';
 
 export default function GardenCommentEdit(props: any) {
   const [createComment] = useMutation(CREATE_COMMENT);
+  // 사용하지 않는 변수면 삭제하는게 어떨지?
+
   const [updateComment] = useMutation(UPDATE_COMMENT);
-  const [comment, setComment] = useState("");
+  const [comment, setComment] = useState('');
   const [loginInfo] = useRecoilState(userInfoState);
 
   const onChangeComment = (event: any) => {
     setComment(event.target.value);
   };
 
-  const [fileUrls, setFileUrls] = useState("");
+  const [fileUrls, setFileUrls] = useState('');
 
   const onChangeFileUrls = (fileUrl: string) => {
     setFileUrls(fileUrl);
   };
 
-  const [videoUrls, setVideoUrls] = useState("");
+  const [videoUrls, setVideoUrls] = useState('');
   const onChangeVideoUrls = (fileUrl: string) => {
     setVideoUrls(fileUrl);
   };
@@ -36,17 +38,17 @@ export default function GardenCommentEdit(props: any) {
       commentId: props.commentEl?.id,
     };
 
-    if (comment !== "") {
+    if (comment !== '') {
       //  @ts-ignore
       myVariables.updateCommentInput.content = comment;
     }
 
-    if (fileUrls !== "") {
+    if (fileUrls !== '') {
       //  @ts-ignore
       myVariables.updateCommentInput.image = fileUrls;
     }
 
-    if (videoUrls !== "") {
+    if (videoUrls !== '') {
       //  @ts-ignore
       myVariables.updateCommentInput.video = videoUrls;
     }
